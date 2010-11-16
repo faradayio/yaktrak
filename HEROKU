@@ -1,0 +1,49 @@
+vidalia:~/yaktrak (master) $ heroku create yaktrak
+Creating yaktrak.... done
+Created http://yaktrak.heroku.com/ | git@heroku.com:yaktrak.git
+Git remote heroku added
+vidalia:~/yaktrak (master) $ sudo gem update heroku
+Updating installed gems
+Updating heroku
+Successfully installed heroku-1.12.2
+Gems updated: heroku
+vidalia:~/yaktrak (master) $ heroku stack
+  aspen-mri-1.8.6
+* bamboo-ree-1.8.7
+  bamboo-mri-1.9.1 (beta)
+  bamboo-mri-1.9.2 (beta)
+vidalia:~/yaktrak (master) $ heroku stack:migrate bamboo-mri-1.9.2
+-----> Preparing to migrate yaktrak
+       bamboo-ree-1.8.7 -> bamboo-mri-1.9.2
+
+       NOTE: You must specify ALL gems (including Rails) in manifest
+
+       Please read the migration guide:
+       http://docs.heroku.com/bamboo
+
+-----> Migration prepared.
+       Run 'git push heroku master' to execute migration.
+vidalia:~/yaktrak (master) $ heroku addons:add custom_domains
+Adding custom_domains to yaktrak... done (free)
+vidalia:~/yaktrak (master) $ heroku domains:add yaktrak.org
+Added yaktrak.org as a custom domain name to yaktrak.heroku.com
+vidalia:~/yaktrak (master) $ heroku domains:add www.yaktrak.org
+Added www.yaktrak.org as a custom domain name to yaktrak.heroku.com
+vidalia:~/yaktrak (master) $ heroku sharing:add heroku@brighterplanet.com
+heroku@brighterplanet.com added as a collaborator on yaktrak.
+vidalia:~/yaktrak (master) $ git push heroku master
+
+ !  seamus@abshere.net not authorized to access yaktrak
+
+fatal: The remote end hung up unexpectedly
+vidalia:~/yaktrak (master) $ heroku sharing:add seamus@abshere.net
+seamus@abshere.net added as a collaborator on yaktrak.
+vidalia:~/yaktrak (master) $ heroku sharing:add dkastner@gmail.com
+dkastner@gmail.com added as a collaborator on yaktrak.
+
+not done
+
+vidalia:~/yaktrak (master) $ heroku addons:add memcache
+Adding memcache to yaktrak... done (free)
+vidalia:~/yaktrak (master) $ heroku addons:add cron:hourly
+Adding cron:hourly to yaktrak... done ($3/mo)
