@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Yaktrak</title>
-  <%= stylesheet_link_tag :all %>
+  <title><%= @title || :Yaktrak %></title>
+  <%= stylesheet_link_tag 'application' %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
+  <%= yield :head %>
 </head>
-<body>
-
+<body class="<%= @bodyclass || :other %>">
+  <div id="wrapper">
 <%= yield %>
-
+  </div>
+<%= yield :bottom %>
 </body>
 </html>
+
