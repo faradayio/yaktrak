@@ -5,14 +5,14 @@ class Tracking < ActiveRecord::Base
   def request
     { 'wsdl:WebAuthenticationDetail' => {
         'wsdl:UserCredential' => {
-          'wsdl:Key' => 'YiFzxLrnuxsbq6w2',
-          'wsdl:Password' => 'Sb5iDOVPDpcaPazLitzVpRhPh',
+          'wsdl:Key' => FEDEX[:key],
+          'wsdl:Password' => FEDEX[:password],
           :order! => ['wsdl:Key', 'wsdl:Password']
         }
       },
       'wsdl:ClientDetail' => {
-        'wsdl:AccountNumber' => '510087747',
-        'wsdl:MeterNumber' => '118522702'
+        'wsdl:AccountNumber' => FEDEX[:account],
+        'wsdl:MeterNumber' => FEDEX[:meter]
       },
       'wsdl:Version' => {
         'wsdl:ServiceId' => 'trck',

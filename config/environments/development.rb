@@ -24,4 +24,9 @@ Yaktrak::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 end
 
-$soap_client = Savon::Client.new('http://banjo.brighterplanet.com/andy/TrackService_v4.wsdl')
+FEDEX = { # DEVELOPMENT/TESTING credentials
+  :key => 'YiFzxLrnuxsbq6w2',
+  :password => 'Sb5iDOVPDpcaPazLitzVpRhPh',
+  :account => '510087747',
+  :meter => '118522702'
+}
