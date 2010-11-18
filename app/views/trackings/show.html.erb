@@ -6,3 +6,4 @@
   <%= render :partial => 'form', :locals => { :tracking => @new_tracking } %>
 </div>
 <h1><%= @tracking.package_identifier %></h1>
+<p><%= @tracking.track.inspect %></p>
