@@ -24,3 +24,4 @@ Yaktrak::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 end
 
+$soap_client = Savon::Client.new('http://banjo.brighterplanet.com/andy/TrackService_v4.wsdl')
