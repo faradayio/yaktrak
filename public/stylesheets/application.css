@@ -51,8 +51,8 @@
 /* ---------- */
 
 body {
-  background: #eee url(images/bg.png) repeat-y;
   margin: 0;
+  background-color: #455559;
 }
 
 a:focus, input:focus, button:focus {
@@ -83,4 +83,32 @@ sub {
   bottom: -5px;
 }
 
+h1.yaktrak {
+  text-indent: -9999px;
+  background-repeat: no-repeat;
+  float: left;
+}
 
+#tracking_package_identifier {
+  font-size: 36px;
+  padding: 3px;  
+  text-indent: 30px;
+  border-width: 1px;
+  border-color: #60757C;
+  border-style: outset;
+  width: 430px;
+}
+
+#new_tracking input[type=submit] {
+  font-size: 18px;
+  padding: 14px 20px 13px;
+  border-width: 1px;
+  border-color: #60757C;
+  position: relative;
+  top: -6px;
+  -moz-border-radius-topright: 10px;
+  -moz-border-radius-bottomright: 10px;
+  background: #C9D1D3;
+  text-shadow: 1px 1px 0 white;
+  outline: none;
+}

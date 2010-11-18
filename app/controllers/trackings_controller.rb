@@ -4,11 +4,12 @@ class TrackingsController < ApplicationController
   end
   
   def create
-    @tracking = Track.create params[:tracking]
+    @tracking = Tracking.create params[:tracking]
     redirect_to @tracking
   end
   
   def show
-    @tracking = Tracking.find params[:tracking]
+    @new_tracking = Tracking.new
+    @tracking = Tracking.find_by_package_identifier params[:id]
   end
 end

@@ -3,14 +3,9 @@
 <%= stylesheet_link_tag 'home' %>
 <% end %>
 
-<h1>Yaktrak</h1>
+<h1 class="yaktrak">Yaktrak</h1>
 <h2>FedEx® package tracking&mdash;<i>now with CO₂!</i>
-<%= form_for @tracking do |f| %>
-<%= image_tag 'yak.png', :id => :yak %>
-<%= f.label :package_identifier, 'Enter a FedEx tracking number' %>
-<p><%= f.text_field :package_identifier %><%= submit_tag 'Track' %></p>
-<p id="help"><%= link_to 'What is this?', '#FIXME' %> &copy;2010 Brighter Planet. FedEx is a registered trademark of FedEx Corporation.</p>
-<% end %>
+<%= render :partial => 'form', :locals => { :tracking => @tracking } %>
 
 <%= content_for :bottom do %>
 <script type="text/javascript">

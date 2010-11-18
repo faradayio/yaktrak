@@ -1,14 +1,13 @@
 body {
-  background: #455559 url(images/home.png) no-repeat;
+  background-image: url(images/home.png);
+  background-repeat: no-repeat;
 }
 
 h1 {
-  text-indent: -9999px;
   margin: 120px 20px 10px 270px;
   background: url(images/yaktrak.png) no-repeat;
   width: 276px;
   height: 181px;
-  float: left;
 }
 
 h2 {
@@ -40,27 +39,6 @@ h2 {
 
 #tracking_package_identifier {
   margin: 0 0 0 200px;
-  font-size: 36px;
-  padding: 3px;  
-  text-indent: 30px;
-  border-width: 1px;
-  border-color: #60757C;
-  border-style: outset;
-  width: 430px;
-}
-
-#new_tracking input[type=submit] {
-  font-size: 18px;
-  padding: 14px 20px 13px;
-  border-width: 1px;
-  border-color: #60757C;
-  position: relative;
-  top: -6px;
-  -moz-border-radius-topright: 10px;
-  -moz-border-radius-bottomright: 10px;
-  background: #C9D1D3;
-  text-shadow: 1px 1px 0 white;
-  outline: none;
 }
 
 #new_tracking p#help {
