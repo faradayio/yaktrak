@@ -30,4 +30,29 @@ class Segment < Struct.new(:origin, :depart, :destination, :arrive)
   def mode
     speed < 80 ? :ground : :air
   end
+  
+  def mode_with_indefinite_article
+    case mode
+    when :ground
+      'a ground'
+    when :air
+      'an air'
+    end
+  end
+  
+  def origin_city
+    ZipCode.find(origin).description
+  end
+  
+  def destination_city
+    ZipCode.find(destination).description
+  end
+  
+  def range
+    if origin_city == destination_city
+      "Within #{origin_city}"
+    else
+      "#{origin_city}–#{destination_city}"
+    end
+  end
 end

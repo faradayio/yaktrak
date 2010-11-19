@@ -4,7 +4,7 @@ body {
 }
 
 h1 {
-  margin: 120px 20px 10px 270px;
+  margin: 120px 20px 10px 255px;
   background: url(images/yaktrak.png) no-repeat;
   width: 276px;
   height: 181px;
@@ -16,6 +16,9 @@ h2 {
   font-size: 18px;
   font-weight: normal;
   text-shadow: 1px 1px 0 black;
+  position: relative;
+  left: -263px;
+  bottom: -65px;
 }
 
 #new_tracking {
@@ -34,7 +37,9 @@ h2 {
   margin: 0 0 0 238px;
   position: relative;
   top: -5px;
-  font-size: 14px;
+  font-size: 16px;
+  color: #c9d1d3;
+  text-shadow: 1px 1px 0 #455559;
 }
 
 #tracking_package_identifier {
@@ -45,6 +50,7 @@ h2 {
   margin: 0 0 0 238px;
   font-size: 13px;
   color: #99afb7;
+  text-shadow: 1px 1px 0 #455559;
 }
 
 #new_tracking p#help a {

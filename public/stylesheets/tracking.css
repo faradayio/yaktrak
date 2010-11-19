@@ -5,6 +5,7 @@ body {
 #header {
   background: #99afb7;
   overflow: auto;
+  margin: 0 0 10px;
 }
 
 #header h1.yaktrak {
@@ -14,10 +15,111 @@ body {
   margin: 0 30px 0 15px;
 }
 
+#header h1.yaktrak a {
+  display: block;
+  width: 150px;
+  height: 98px;
+}
+
 #header #new_tracking {
   margin: 23px 0 0;
+  text-align: right;
+  padding: 0 20px 0 0;
 }
 
 #header #new_tracking #yak, #header #new_tracking label, #header #new_tracking #help {
   display: none;
+}
+
+h1.tracking {
+  font-weight: normal;
+  margin: 20px;
+  font-size: 18px;
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.5);
+}
+
+ol.segments {
+  list-style: none;
+  border-top: 1px solid #99afb7;
+  border-bottom: 1px solid white;
+}
+
+ol.segments li {
+  padding: 10px 20px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #99afb7;
+  clear: both;
+}
+
+ol.segments li.ground:before { content: "✇"; }
+ol.segments li.air:before { content: "✈"; }
+
+ol.segments li:before {
+  float: left;
+  width: 40px;
+  font-size: 40px;
+  margin: 0 5px 0 0;
+  line-height: 30px;
+  color: #455559;
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.5);
+}
+
+ol.segments li h2 {
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 16px;
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.5);
+}
+
+ol.segments li p.rationale {
+  color: #455559;
+  font-size: 13px;
+  font-style: italic;
+}
+
+p.status {
+  padding: 15px 0 0;
+}
+
+p.status.delivered:before { content: "✔"; color: green; }
+p.status.en_route:before { content: "➜"; color: yellow; }
+
+p.status:before {
+  float: left;
+  width: 40px;
+  font-size: 40px;
+  margin: 0 5px 0 20px;
+  line-height: 30px;
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.5);
+  position:relative;
+  top: -10px;
+}
+
+p.footprint {
+  float: right;
+  width: 200px;
+  margin: 7px 0 0 0;
+}
+
+p.footprint, p.footprint a {
+  color: #455559;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+p.footprint a:hover {
+  text-decoration: underline;
+}
+
+#wrapper>p.footprint {
+  margin: 10px 20px 0 0;
+  font-size: 24px;
+  color: black;
+}
+
+#wrapper>p.footprint+p.footprint {
+  text-align: right;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-top: 17px;
 }

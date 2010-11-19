@@ -51,13 +51,23 @@ class Tracking < ActiveRecord::Base
         memo << Segment.new(event.zipcode, event.timestamp)
       elsif memo.last.origin == event.zipcode and not memo.last.destination
         memo.last.depart = event.timestamp
-      elsif memo.last.destination
+      elsif memo.last.destination and memo.last.destination == event.zipcode
         memo << Segment.new(event.zipcode, event.timestamp)
+      elsif memo.last.destination
+        memo << Segment.new(memo.last.destination, memo.last.arrival, event.zipcode, event.timestamp)
       else
         memo.last.destination = event.zipcode
         memo.last.arrive = event.timestamp
       end
       memo
     end
+  end
+  
+  def delivered?
+    events.find { |e| e.type == 'DL' }
+  end
+  
+  def status
+    delivered? ? :delivered : :en_route
   end
 end
