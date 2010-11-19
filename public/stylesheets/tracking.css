@@ -1,11 +1,11 @@
-body {
+#main {
   background: #c9d1d3;
+  padding: 10px 0 30px;
 }
 
 #header {
   background: #99afb7;
   overflow: auto;
-  margin: 0 0 10px;
 }
 
 #header h1.yaktrak {
@@ -23,7 +23,6 @@ body {
 
 #header #new_tracking {
   margin: 23px 0 0;
-  text-align: right;
   padding: 0 20px 0 0;
 }
 
@@ -111,15 +110,28 @@ p.footprint a:hover {
   text-decoration: underline;
 }
 
-#wrapper>p.footprint {
+#main>p.footprint {
   margin: 10px 20px 0 0;
   font-size: 24px;
   color: black;
 }
 
-#wrapper>p.footprint+p.footprint {
+#main>p.footprint+p.footprint {
   text-align: right;
   text-transform: uppercase;
   font-size: 14px;
   margin-top: 17px;
+}
+
+#footer {
+  background: #455559 url(images/yak.png) no-repeat 30px 20px;
+  min-height: 200px;
+  padding: 30px 240px 0 195px;
+  color: #99afb7;
+  text-shadow: 1px 1px 0 black;
+  font-size: 14px;
+}
+
+#footer a {
+  color: #c9d1d3;
 }

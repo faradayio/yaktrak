@@ -5,8 +5,13 @@
   <h1 class="yaktrak"><%= link_to 'Yaktrak', root_path %></h1>
   <%= render :partial => 'form', :locals => { :tracking => @new_tracking } %>
 </div>
+<div id="main">
 <%= render :partial => 'footprint', :locals => { :tracking => @tracking } %>
-<h1 class="tracking">Tracking FedEx package <strong><%= link_to @tracking.package_identifier, "http://www.fedex.com/Tracking?tracknumbers=#{ @tracking.package_identifier }&cntry_code=us&clientype=ivshpalrt&" %></strong></h1>
+  <h1 class="tracking">Tracking FedEx package <strong><%= link_to @tracking.package_identifier, "http://www.fedex.com/Tracking?tracknumbers=#{ @tracking.package_identifier }&cntry_code=us&clientype=ivshpalrt&" %></strong></h1>
 <%= render :partial => 'segments/ol', :locals => { :segments => @tracking.segments } %>
 <%= render :partial => 'footprint', :locals => { :tracking => @tracking } %>
 <%= render :partial => "trackings/status/#{@tracking.status}", :layout => 'trackings/status', :locals => { :tracking => @tracking } %>
+</div>
+<div id="footer">
+<p>Your friends at <%= link_to 'Brighter Planet', 'http://brighterplanet.com' %> made Yaktrak to demonstrate <%= link_to 'Carbon Middleware', 'http://brighterplanet.com/tour' %>, our brand new science-as-a-service platform. We can perform very high volumes of carbon emission calculations in real time, under the most challenging data quality situations. Perhaps we can do something like this for your business or application? <%= mail_to 'info@brighterplanet.com', 'Let us know' %>. You may be interested in our <%= link_to 'blog post', '#FIXME' %> introducing Yaktrak&mdash;or even in her <%= link_to 'source code', 'http://github.com/brighterplanet/yaktrak' %>. &copy;<%= Time.now.year %> Brighter Planet.</p>  
+</div>
