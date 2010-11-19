@@ -135,3 +135,9 @@ p.footprint a:hover {
 #footer a {
   color: #c9d1d3;
 }
+
+#warning {
+  background: yellow;
+  padding: 10px 20px;
+  font-size: 14px;
+}

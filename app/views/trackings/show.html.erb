@@ -2,6 +2,9 @@
   <%= stylesheet_link_tag 'tracking' %>
 <% end %>
 <% @title = "#{@tracking.package_identifier} tracking details [Yaktrak]" %>
+<div id="warning">
+  <p>Yaktrak is <strong>under construction</strong>; the emission estimates below are <strong>just placeholders</strong>. Stay tuned for the real deal.</p>
+</div>
 <div id="header">
   <h1 class="yaktrak"><%= link_to 'Yaktrak', root_path %></h1>
   <%= render :partial => 'form', :locals => { :tracking => @new_tracking } %>
