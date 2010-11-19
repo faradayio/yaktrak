@@ -47,3 +47,10 @@ Yaktrak::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 end
+
+FEDEX = { # DEVELOPMENT/TESTING credentials
+  :key => 'YiFzxLrnuxsbq6w2',
+  :password => 'Sb5iDOVPDpcaPazLitzVpRhPh',
+  :account => '510087747',
+  :meter => '118522702'
+}
