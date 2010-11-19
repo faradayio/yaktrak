@@ -52,7 +52,7 @@ class Segment < Struct.new(:origin, :depart, :destination, :arrive)
     if origin_city == destination_city
       "Within #{origin_city}"
     else
-      "#{origin_city}&ndash#{destination_city}"
+      "#{origin_city}&ndash;#{destination_city}"
     end
   end
 end
