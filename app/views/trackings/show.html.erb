@@ -1,7 +1,7 @@
 <%= content_for :head do %>
   <%= stylesheet_link_tag 'tracking' %>
 <% end %>
-<% @title = "Tracking #{@tracking.package_identifier}" %>
+<% @title = "#{@tracking.package_identifier} tracking details [Yaktrak]" %>
 <div id="header">
   <h1 class="yaktrak"><%= link_to 'Yaktrak', root_path %></h1>
   <%= render :partial => 'form', :locals => { :tracking => @new_tracking } %>
