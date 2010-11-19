@@ -30,10 +30,34 @@ class Tracking < ActiveRecord::Base
     }
   end
   
-  def track
-    $soap_client.track do |soap|
+  def tracking_details
+    @tracking_details ||= $soap_client.track do |soap|
       soap.input = 'TrackRequest'
       soap.body = request
     end.to_hash[:track_reply]
+  end
+  
+  def events
+    tracking_details[:track_details][:events].map{ |event| Event.new event[:address][:postal_code], event[:timestamp], event[:event_type] }.reverse
+  end
+  
+  def nodes
+    events.map(&:zipcode).compact.uniq
+  end
+  
+  def segments
+    events.select(&:zipcode).inject([]) do |memo, event|
+      if memo.empty?
+        memo << Segment.new(event.zipcode, event.timestamp)
+      elsif memo.last.origin == event.zipcode and not memo.last.destination
+        memo.last.depart = event.timestamp
+      elsif memo.last.destination
+        memo << Segment.new(event.zipcode, event.timestamp)
+      else
+        memo.last.destination = event.zipcode
+        memo.last.arrive = event.timestamp
+      end
+      memo
+    end
   end
 end

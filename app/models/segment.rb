@@ -1,0 +1,33 @@
+class Segment < Struct.new(:origin, :depart, :destination, :arrive)
+  def length
+    ZipCode.find(origin).distance_to ZipCode.find(destination)
+  end
+  
+  def departure
+    Time.parse(depart.to_s)
+  end
+  
+  def arrival
+    Time.parse(arrive.to_s)
+  end
+  
+  def duration # in seconds
+    arrival - departure
+  end
+  
+  def duration_in_minutes
+    duration / 60
+  end
+  
+  def duration_in_hours
+    duration_in_minutes / 60
+  end
+  
+  def speed
+    length / duration_in_hours
+  end
+  
+  def mode
+    speed < 80 ? :ground : :air
+  end
+end
