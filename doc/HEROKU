@@ -47,3 +47,9 @@ vidalia:~/yaktrak (master) $ heroku addons:add memcache
 Adding memcache to yaktrak... done (free)
 vidalia:~/yaktrak (master) $ heroku addons:add cron:hourly
 Adding cron:hourly to yaktrak... done ($3/mo)
+
+
+vidalia:~/yaktrak (master) $ heroku domains:add yaktrack.org
+Added yaktrack.org as a custom domain name to yaktrak.heroku.com
+vidalia:~/yaktrak (master) $ heroku domains:add www.yaktrack.org
+Added www.yaktrack.org as a custom domain name to yaktrak.heroku.com
