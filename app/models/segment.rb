@@ -1,6 +1,37 @@
-class Segment < Struct.new(:origin, :depart, :destination, :arrive)
+class Segment
+  include Carbon
+
+  emit_as :shipment do
+    provide :weight
+    provide :package_count
+    provide :shipping_company, :key => :name
+    provide :origin, :as => :origin_zip_code
+    provide :destination, :as => :destination_zip_code
+    provide :mode
+  end
+
+  attr_accessor :origin, :depart, :destination, :arrive, :weight
+
+  def initialize(options = {})
+    options.each do |name, value|
+      self.send "#{name}=", value
+    end
+  end
+
+  def shipping_company
+    'Federal Express'
+  end
+
+  def origin_zip_code
+    ZipCode.find(origin)
+  end
+
+  def destination_zip_code
+    ZipCode.find(destination)
+  end
+
   def length
-    ZipCode.find(origin).distance_to ZipCode.find(destination)
+    origin_zip_code.distance_to destination_zip_code
   end
   
   def departure
@@ -30,7 +61,7 @@ class Segment < Struct.new(:origin, :depart, :destination, :arrive)
   def mode
     speed < 80 ? :ground : :air
   end
-  
+
   def mode_with_indefinite_article
     case mode
     when :ground
@@ -54,5 +85,9 @@ class Segment < Struct.new(:origin, :depart, :destination, :arrive)
     else
       "#{origin_city}&ndash;#{destination_city}"
     end
+  end
+
+  def footprint
+    length
   end
 end

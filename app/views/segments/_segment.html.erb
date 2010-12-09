@@ -1,3 +1,3 @@
-<p class="footprint"><%= link_to "<strong>#{number_with_delimiter segment.length.round}</strong> lbs. CO₂e".html_safe, '#FIXME', :title => 'Methodology' %></p>
+<p class="footprint"><%= link_to "<strong>#{number_with_delimiter segment.footprint}</strong> lbs. CO₂e".html_safe, '#FIXME', :title => 'Methodology' %></p>
 <h2><%= segment.range.html_safe %></h2>
 <p class="rationale">Because your package covered <%= number_with_delimiter segment.length.round %> miles in <%= distance_of_time_in_words segment.departure, segment.arrival %>, Yaktrak is assuming this was <%= segment.mode_with_indefinite_article %> segment.</p>

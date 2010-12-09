@@ -1,4 +1,6 @@
 class Tracking < ActiveRecord::Base
+  class Failure < StandardError; end
+
   set_primary_key :package_identifier
   attr_accessible :package_identifier
   
@@ -29,32 +31,49 @@ class Tracking < ActiveRecord::Base
       :order! => [ 'wsdl:WebAuthenticationDetail', 'wsdl:ClientDetail', 'wsdl:Version', 'wsdl:PackageIdentifier', 'wsdl:IncludeDetailedScans']
     }
   end
-  
-  def tracking_details
-    @tracking_details ||= $soap_client.track do |soap|
+
+  def tracking_response
+    return @tracking_response unless @tracking_response.nil? 
+    response = $soap_client.track do |soap|
       soap.input = 'TrackRequest'
       soap.body = request
-    end.to_hash[:track_reply]
+    end.to_hash
+    if response[:track_reply][:highest_severity] == 'ERROR'
+      raise Failure, "Failed to find tracking information for #{package_identifier}" 
+    end
+    @tracking_response = response
+  end
+  
+  def tracking_details
+    tracking_response[:track_reply][:track_details]
+  end
+
+  def weight
+    if tracking_details[:package_weight]
+      tracking_details[:package_weight][:value]
+    end
   end
   
   def events
-    tracking_details[:track_details][:events].map{ |event| Event.new event[:address][:postal_code], event[:timestamp], event[:event_type] }.reverse
-  end
-  
-  def nodes
-    events.map(&:zipcode).compact.uniq
+    tracking_details[:events].map do |event|
+      Event.new event[:address][:postal_code], event[:timestamp], event[:event_type] 
+    end.reverse
   end
   
   def segments
     events.select(&:zipcode).inject([]) do |memo, event|
       if memo.empty?
-        memo << Segment.new(event.zipcode, event.timestamp)
+        memo << Segment.new(:origin => event.zipcode, :depart => event.timestamp,
+                            :weight => weight)
       elsif memo.last.origin == event.zipcode and not memo.last.destination
         memo.last.depart = event.timestamp
       elsif memo.last.destination and memo.last.destination == event.zipcode
-        memo << Segment.new(event.zipcode, event.timestamp)
+        memo << Segment.new(:origin => event.zipcode, :depart => event.timestamp,
+                            :weight => weight)
       elsif memo.last.destination
-        memo << Segment.new(memo.last.destination, memo.last.arrival, event.zipcode, event.timestamp)
+        memo << Segment.new(:origin => memo.last.destination, :depart => memo.last.arrival,
+                            :destination => event.zipcode, :arrive => event.timestamp,
+                            :weight => weight)
       else
         memo.last.destination = event.zipcode
         memo.last.arrive = event.timestamp
@@ -64,10 +83,14 @@ class Tracking < ActiveRecord::Base
   end
   
   def delivered?
-    events.find { |e| e.type == 'DL' }
+    events.find { |e| e.delivery? }.present?
   end
   
   def status
     delivered? ? :delivered : :en_route
+  end
+
+  def footprint
+    segments.empty? ? 0 : segments.sum(&:footprint).round
   end
 end
