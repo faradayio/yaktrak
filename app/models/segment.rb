@@ -20,7 +20,7 @@ class Segment
   end
 
   def shipping_company
-    'Federal Express'
+    'FedEx'
   end
 
   def origin_zip_code
