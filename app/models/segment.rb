@@ -79,11 +79,11 @@ class Segment
   end
   
   def origin_city
-    ZipCode.find(origin).description
+    origin_zip_code.description
   end
   
   def destination_city
-    ZipCode.find(destination).description
+    destination_zip_code.description
   end
   
   def range
