@@ -44,22 +44,22 @@ describe Tracking do
           :origin_location_address => {
             :City => 'TOPEKA',
             :StateOrProvinceCode => 'KS',
-            :CountryCode => 'US',
-            :Residential => 'false'
+            :country_code => 'US',
+            :residential => 'false'
           },
-          :ShipTimestamp => '2010-05-10T00:00:00',
-          :DestinationAddress => {
+          :Shiptimestamp => '2010-05-10T00:00:00',
+          :Destinationaddress => {
             :City => 'Windsor',
             :StateOrProvinceCode => 'CO',
-            :CountryCode => 'US',
-            :Residential => 'false'
+            :country_code => 'US',
+            :residential => 'false'
           },
-          :ActualDeliveryTimestamp => '2010-05-12T08:59:14-06:00',
-          :ActualDeliveryAddress => {
+          :ActualDeliverytimestamp => '2010-05-12T08:59:14-06:00',
+          :ActualDeliveryaddress => {
             :City => 'Fort Collins',
             :StateOrProvinceCode => 'CO',
-            :CountryCode => 'US',
-            :Residential => 'false'
+            :country_code => 'US',
+            :residential => 'false'
           },
           :DeliverySignatureName => 'AHANSEN',
           :SignatureProofOfDeliveryAvailable => 'true',
@@ -68,143 +68,143 @@ describe Tracking do
           :RedirectToHoldEligibility => 'INELIGIBLE',
           :events => [
             {
-              :Timestamp => '2010-05-12T08:59:14-06:00',
-              :EventType => 'DL',
-              :EventDescription => 'Delivered',
-              :Address => {
+              :timestamp => '2010-05-12T08:59:14-06:00',
+              :event_type => 'DL',
+              :event_description => 'Delivered',
+              :address => {
                 :City => 'Fort Collins',
                 :StateOrProvinceCode => 'CO',
-                :PostalCode => '80528',
-                :CountryCode => 'US',
-                :Residential => 'false',
+                :postal_code => '80528',
+                :country_code => 'US',
+                :residential => 'false',
               },
               :ArrivalLocation => 'DELIVERY_LOCATION',
             },
             {
-              :Timestamp => '2010-05-12T05:46:00-06:00',
-              :EventType => 'OD',
-              :EventDescription => 'On FedEx vehicle for delivery',
-              :Address => {
+              :timestamp => '2010-05-12T05:46:00-06:00',
+              :event_type => 'OD',
+              :event_description => 'On FedEx vehicle for delivery',
+              :address => {
                 :City => 'JOHNSTOWN',
                 :StateOrProvinceCode => 'CO',
-                :PostalCode => '80534',
-                :CountryCode => 'US',
-                :Residential => 'false'
+                :postal_code => '80534',
+                :country_code => 'US',
+                :residential => 'false'
               },
               :ArrivalLocation => 'VEHICLE',
             },
             {
-              :Timestamp => '2010-05-12T03:20:10-06:00',
-              :EventType => 'AR',
-              :EventDescription => 'At local FedEx facility',
-              :Address => {
+              :timestamp => '2010-05-12T03:20:10-06:00',
+              :event_type => 'AR',
+              :event_description => 'At local FedEx facility',
+              :address => {
                 :City => 'JOHNSTOWN',
                 :StateOrProvinceCode => 'CO',
-                :PostalCode => '80534',
-                :CountryCode => 'US',
-                :Residential => 'false'
+                :postal_code => '80534',
+                :country_code => 'US',
+                :residential => 'false'
               },
               :ArrivalLocation => 'DESTINATION_FEDEX_FACILITY'
             },
             {
-              :Timestamp => '2010-05-12T02:30:24-06:00',
-              :EventType => 'DP',
-              :EventDescription => 'Departed FedEx location',
-              :Address => {
+              :timestamp => '2010-05-12T02:30:24-06:00',
+              :event_type => 'DP',
+              :event_description => 'Departed FedEx location',
+              :address => {
                 :City => 'HENDERSON',
                 :StateOrProvinceCode => 'CO',
-                :PostalCode => '80640',
-                :CountryCode => 'US',
-                :Residential => 'false'
+                :postal_code => '80640',
+                :country_code => 'US',
+                :residential => 'false'
               },
               :ArrivalLocation => 'FEDEX_FACILITY',
             },
             {
-              :Timestamp => '2010-05-11T20:04:00-06:00',
-              :EventType => 'AR',
-              :EventDescription => 'Arrived at FedEx location',
-              :Address => {
+              :timestamp => '2010-05-11T20:04:00-06:00',
+              :event_type => 'AR',
+              :event_description => 'Arrived at FedEx location',
+              :address => {
                 :City => 'HENDERSON',
                 :StateOrProvinceCode => 'CO',
-                :PostalCode => '80640',
-                :CountryCode => 'US',
-                :Residential => 'false',
+                :postal_code => '80640',
+                :country_code => 'US',
+                :residential => 'false',
               },
               :ArrivalLocation => 'FEDEX_FACILITY'
             },
             {
-              :Timestamp => '2010-05-11T07:29:20-05:00',
-              :EventType => 'DP',
-              :EventDescription => 'Departed FedEx location',
-              :Address => {
+              :timestamp => '2010-05-11T07:29:20-05:00',
+              :event_type => 'DP',
+              :event_description => 'Departed FedEx location',
+              :address => {
                 :City => 'LENEXA',
                 :StateOrProvinceCode => 'KS',
-                :PostalCode => '66227',
-                :CountryCode => 'US',
-                :Residential => 'false'
+                :postal_code => '66227',
+                :country_code => 'US',
+                :residential => 'false'
               },
               :ArrivalLocation => 'FEDEX_FACILITY'
             },
             {
-              :Timestamp => '2010-05-11T01:43:00-05:00',
-              :EventType => 'AR',
-              :EventDescription => 'Arrived at FedEx location',
-              :Address => {
+              :timestamp => '2010-05-11T01:43:00-05:00',
+              :event_type => 'AR',
+              :event_description => 'Arrived at FedEx location',
+              :address => {
                 :City => 'LENEXA',
                 :StateOrProvinceCode => 'KS',
-                :PostalCode => '66227',
-                :CountryCode => 'US',
-                :Residential => 'false'
+                :postal_code => '66227',
+                :country_code => 'US',
+                :residential => 'false'
               },
               :ArrivalLocation => 'FEDEX_FACILITY'
             },
             {
-              :Timestamp => '2010-05-10T21:41:17-05:00',
-              :EventType => 'DP',
-              :EventDescription => 'Left FedEx origin facility',
-              :Address => {
+              :timestamp => '2010-05-10T21:41:17-05:00',
+              :event_type => 'DP',
+              :event_description => 'Left FedEx origin facility',
+              :address => {
                 :City => 'TOPEKA',
                 :StateOrProvinceCode => 'KS',
-                :PostalCode => '66619',
-                :CountryCode => 'US',
-                :Residential => 'false'
+                :postal_code => '66619',
+                :country_code => 'US',
+                :residential => 'false'
               },
               :ArrivalLocation => 'ORIGIN_FEDEX_FACILITY'
             },
             {
-              :Timestamp => '2010-05-10T18:55:00-05:00',
-              :EventType => 'AR',
-              :EventDescription => 'Arrived at FedEx location',
-              :Address => {
+              :timestamp => '2010-05-10T18:55:00-05:00',
+              :event_type => 'AR',
+              :event_description => 'Arrived at FedEx location',
+              :address => {
                 :City => 'TOPEKA',
                 :StateOrProvinceCode => 'KS',
-                :PostalCode => '66619',
-                :CountryCode => 'US',
-                :Residential => 'false'
+                :postal_code => '66619',
+                :country_code => 'US',
+                :residential => 'false'
               },
               :ArrivalLocation => 'FEDEX_FACILITY'
             },
             {
-              :Timestamp => '2010-05-10T16:52:00-05:00',
-              :EventType => 'PU',
-              :EventDescription => 'Picked up',
-              :Address => {
+              :timestamp => '2010-05-10T16:52:00-05:00',
+              :event_type => 'PU',
+              :event_description => 'Picked up',
+              :address => {
                 :City => 'TOPEKA',
                 :StateOrProvinceCode => 'KS',
-                :PostalCode => '66619',
-                :CountryCode => 'US',
-                :Residential => 'false'
+                :postal_code => '66619',
+                :country_code => 'US',
+                :residential => 'false'
               },
               :ArrivalLocation => 'PICKUP_LOCATION'
             },
             {
-              :Timestamp => '2010-05-08T08:32:00-05:00',
-              :EventType => 'OC',
-              :EventDescription => 'Shipment information sent to FedEx',
-              :Address => {
-                :PostalCode => '66619',
-                :CountryCode => 'US',
-                :Residential => 'false'
+              :timestamp => '2010-05-08T08:32:00-05:00',
+              :event_type => 'OC',
+              :event_description => 'Shipment information sent to FedEx',
+              :address => {
+                :postal_code => '66619',
+                :country_code => 'US',
+                :residential => 'false'
               },
               :ArrivalLocation => 'CUSTOMER'
             }
@@ -279,6 +279,12 @@ describe Tracking do
     it 'should return 0 if there are no segments' do
       tracking.stub!(:segments).and_return []
       tracking.footprint.should == 0
+    end
+  end
+
+  describe '#segments' do
+    it 'should return an empty array if there are no events' do
+
     end
   end
 end

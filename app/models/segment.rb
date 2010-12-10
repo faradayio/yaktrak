@@ -7,10 +7,11 @@ class Segment
     provide :shipping_company, :key => :name
     provide :origin, :as => :origin_zip_code
     provide :destination, :as => :destination_zip_code
-    provide :mode
+    provide :mode_name, :as => :mode
   end
 
-  attr_accessor :origin, :depart, :destination, :arrive, :weight
+  attr_accessor :origin, :depart, :destination, :arrive,
+    :weight, :package_count, :mode
 
   def initialize(options = {})
     options.each do |name, value|
@@ -59,15 +60,21 @@ class Segment
   end
   
   def mode
-    speed < 80 ? :ground : :air
+    speed < 80 ? :ground_carrier : :air_transport
+  end
+
+  def mode_name
+    mode.to_s.humanize
   end
 
   def mode_with_indefinite_article
     case mode
-    when :ground
+    when :ground_courrier, :ground_carrier
       'a ground'
-    when :air
+    when :air_transport
       'an air'
+    else
+      'an average'
     end
   end
   
@@ -88,6 +95,10 @@ class Segment
   end
 
   def footprint
-    length
+    emission_estimate
+  end
+
+  def methodology
+    emission_estimate.methodology
   end
 end

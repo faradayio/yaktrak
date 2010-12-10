@@ -5,7 +5,8 @@ describe Segment do
   let(:arrive) { Time.parse '2010-12-10 08:25:22' }
   let(:segment) do
     Segment.new :origin => '48915', :depart => depart.to_s,
-      :destination => '22406', :arrive => arrive.to_s
+      :destination => '22406', :arrive => arrive.to_s,
+      :weight => '2.3', :package_count => '3'
   end
 
   describe '#length' do
@@ -54,26 +55,41 @@ describe Segment do
       segment.speed.should == 3
     end
   end
-  
+
   describe '#mode' do
     it 'should return :ground for speeds less than 80mph' do
       segment.stub!(:speed).and_return(67)
-      segment.mode.should == :ground
+      segment.mode.should == :ground_carrier
     end
     it 'should return :air for speeds of 80mph or more' do
       segment.stub!(:speed).and_return(97)
-      segment.mode.should == :air
+      segment.mode.should == :air_transport
+    end
+  end
+
+  describe '#mode_name' do
+    it 'should convert the mode to the name used by Earth' do
+      segment.stub!(:mode).and_return :ground_carrier
+      segment.mode_name.should == 'Ground carrier'
     end
   end
   
   describe '#mode_with_indefinite_article' do
-    it "should return 'a ground' for ground transportation" do
-      segment.stub!(:mode).and_return(:ground)
+    it "should return 'a ground' for ground carrier" do
+      segment.stub!(:mode).and_return :ground_carrier
+      segment.mode_with_indefinite_article.should == 'a ground'
+    end
+    it "should return 'a ground' for ground courrier" do
+      segment.stub!(:mode).and_return :ground_courrier
       segment.mode_with_indefinite_article.should == 'a ground'
     end
     it "should return 'an air' for air transportation" do
-      segment.stub!(:mode).and_return(:air)
+      segment.stub!(:mode).and_return :air_transport
       segment.mode_with_indefinite_article.should == 'an air'
+    end
+    it "should return 'an average' for US average" do
+      segment.stub!(:mode).and_return :us_average
+      segment.mode_with_indefinite_article.should == 'an average'
     end
   end
   
@@ -92,7 +108,16 @@ describe Segment do
 
   describe '#footprint' do
     it 'should return the footprint for a given weight and package count' do
-      segment.footprint 5, 2
+      segment.stub!(:emission_estimate).and_return 87.2
+      segment.footprint.should == 87.2
+    end
+  end
+
+  describe '#methodology' do
+    it 'should retrieve the methodology for the emission estimate' do
+      estimate = mock Object, :methodology => 'http://carbon.brighterplanet.com/yo'
+      segment.stub!(:emission_estimate).and_return estimate
+      segment.methodology.should == 'http://carbon.brighterplanet.com/yo'
     end
   end
 end
