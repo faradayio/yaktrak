@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.3'
 
 gem 'carbon'
-gem 'earth', '~>0.2.14'
+gem 'earth', '~>0.3.7'
 gem 'fastercsv' if RUBY_VERSION < '1.9'
 gem 'savon', '~>0.7'
 
