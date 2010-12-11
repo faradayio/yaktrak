@@ -24,11 +24,11 @@ class Segment
   end
 
   def origin_zip_code
-    ZipCode.find(origin)
+    ZipCode.find_by_name(origin)
   end
 
   def destination_zip_code
-    ZipCode.find(destination)
+    ZipCode.find_by_name(destination)
   end
 
   def length
