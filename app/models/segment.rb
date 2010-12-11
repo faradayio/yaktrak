@@ -95,7 +95,7 @@ class Segment
   end
 
   def footprint
-    emission_estimate
+    emission_estimate.number
   end
 
   def methodology

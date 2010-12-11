@@ -11,9 +11,9 @@ describe Segment do
 
   describe '#length' do
     it 'should calculate the distance between zip codes in miles' do
-      zip1 = mock ZipCode, :distance_to => 38
-      zip2 = mock ZipCode
-      ZipCode.stub!(:find).and_return(zip1, zip2)
+      zip = mock ZipCode, :distance_to => 38
+      segment.stub!(:origin_zip_code).and_return zip
+      ZipCode.stub!(:find).and_return(zip)
       segment.length.should == 38
     end
   end
@@ -108,7 +108,7 @@ describe Segment do
 
   describe '#footprint' do
     it 'should return the footprint for a given weight and package count' do
-      segment.stub!(:emission_estimate).and_return 87.2
+      segment.stub!(:emission_estimate).and_return mock(Object, :number => 87.2)
       segment.footprint.should == 87.2
     end
   end
