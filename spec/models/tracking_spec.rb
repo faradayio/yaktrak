@@ -244,6 +244,19 @@ describe Tracking do
     end
   end
 
+  describe '#package_count' do
+    it 'should return the package package count' do
+      $soap_client.stub!(:track).and_return good_response
+      tracking.package_count.should == '1'
+    end
+    it 'should return nil if no package count is given' do
+      no_package_count_response = good_response
+      no_package_count_response[:track_reply][:track_details].delete :package_count
+      $soap_client.stub!(:track).and_return no_package_count_response
+      tracking.package_count.should be_nil
+    end
+  end
+
   describe '#delivered?' do
     it 'should return true if there is a delivery event' do
       delivery_event = mock Event, :delivery? => true

@@ -53,6 +53,12 @@ class Tracking < ActiveRecord::Base
       tracking_details[:package_weight][:value]
     end
   end
+
+  def package_count
+    if tracking_details[:package_count]
+      tracking_details[:package_count]
+    end
+  end
   
   def events
     tracking_details[:events].map do |event|
@@ -64,16 +70,16 @@ class Tracking < ActiveRecord::Base
     events.select(&:zipcode).inject([]) do |memo, event|
       if memo.empty?
         memo << Segment.new(:origin => event.zipcode, :depart => event.timestamp,
-                            :weight => weight)
+                            :weight => weight, :package_count => package_count)
       elsif memo.last.origin == event.zipcode and not memo.last.destination
         memo.last.depart = event.timestamp
       elsif memo.last.destination and memo.last.destination == event.zipcode
         memo << Segment.new(:origin => event.zipcode, :depart => event.timestamp,
-                            :weight => weight)
+                            :weight => weight, :package_count => package_count)
       elsif memo.last.destination
         memo << Segment.new(:origin => memo.last.destination, :depart => memo.last.arrival,
                             :destination => event.zipcode, :arrive => event.timestamp,
-                            :weight => weight)
+                            :weight => weight, :package_count => package_count)
       else
         memo.last.destination = event.zipcode
         memo.last.arrive = event.timestamp
