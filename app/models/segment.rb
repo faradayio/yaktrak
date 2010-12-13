@@ -4,10 +4,11 @@ class Segment
   emit_as :shipment do
     provide :weight
     provide :package_count
-    provide :shipping_company, :key => :name
+    provide :carrier, :key => :name
     provide :origin, :as => :origin_zip_code
     provide :destination, :as => :destination_zip_code
     provide :mode_name, :as => :mode
+    provide :segment_count
   end
 
   attr_accessor :origin, :depart, :destination, :arrive,
@@ -19,8 +20,12 @@ class Segment
     end
   end
 
-  def shipping_company
+  def carrier
     'FedEx'
+  end
+
+  def segment_count
+    1
   end
 
   def origin_zip_code

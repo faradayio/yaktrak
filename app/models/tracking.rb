@@ -67,7 +67,7 @@ class Tracking < ActiveRecord::Base
   end
   
   def segments
-    events.select(&:zipcode).inject([]) do |memo, event|
+    @segments ||= events.select(&:zipcode).inject([]) do |memo, event|
       if memo.empty?
         memo << Segment.new(:origin => event.zipcode, :depart => event.timestamp,
                             :weight => weight, :package_count => package_count)
