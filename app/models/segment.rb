@@ -60,7 +60,7 @@ class Segment
   end
   
   def mode
-    speed < 80 ? :ground_carrier : :air_transport
+    speed < 80 ? :ground : :air
   end
 
   def mode_name
@@ -69,12 +69,10 @@ class Segment
 
   def mode_with_indefinite_article
     case mode
-    when :ground_courrier, :ground_carrier
+    when :courier, :ground
       'a ground'
-    when :air_transport
+    when :air
       'an air'
-    else
-      'an average'
     end
   end
   

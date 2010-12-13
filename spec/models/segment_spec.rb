@@ -13,7 +13,6 @@ describe Segment do
     it 'should calculate the distance between zip codes in miles' do
       zip = mock ZipCode, :distance_to => 38
       segment.stub!(:origin_zip_code).and_return zip
-      ZipCode.stub!(:find).and_return(zip)
       segment.length.should == 38
     end
   end
@@ -59,37 +58,33 @@ describe Segment do
   describe '#mode' do
     it 'should return :ground for speeds less than 80mph' do
       segment.stub!(:speed).and_return(67)
-      segment.mode.should == :ground_carrier
+      segment.mode.should == :ground
     end
     it 'should return :air for speeds of 80mph or more' do
       segment.stub!(:speed).and_return(97)
-      segment.mode.should == :air_transport
+      segment.mode.should == :air
     end
   end
 
   describe '#mode_name' do
     it 'should convert the mode to the name used by Earth' do
-      segment.stub!(:mode).and_return :ground_carrier
-      segment.mode_name.should == 'Ground carrier'
+      segment.stub!(:mode).and_return :ground
+      segment.mode_name.should == 'Ground'
     end
   end
   
   describe '#mode_with_indefinite_article' do
-    it "should return 'a ground' for ground carrier" do
-      segment.stub!(:mode).and_return :ground_carrier
+    it "should return 'a ground' for ground" do
+      segment.stub!(:mode).and_return :ground
       segment.mode_with_indefinite_article.should == 'a ground'
     end
-    it "should return 'a ground' for ground courrier" do
-      segment.stub!(:mode).and_return :ground_courrier
+    it "should return 'a ground' for courier" do
+      segment.stub!(:mode).and_return :courier
       segment.mode_with_indefinite_article.should == 'a ground'
     end
-    it "should return 'an air' for air transportation" do
-      segment.stub!(:mode).and_return :air_transport
+    it "should return 'an air' for air" do
+      segment.stub!(:mode).and_return :air
       segment.mode_with_indefinite_article.should == 'an air'
-    end
-    it "should return 'an average' for US average" do
-      segment.stub!(:mode).and_return :us_average
-      segment.mode_with_indefinite_article.should == 'an average'
     end
   end
   
