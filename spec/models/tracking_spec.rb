@@ -15,212 +15,24 @@ describe Tracking do
       }
     }
   end
-  let(:good_response) do
-    s = {
-      :track_reply => {
-        :highest_severity => 'SUCCESS',
-        :notifications => {
-          :severity => 'SUCCESS',
-          :source => 'trck',
-          :code => '0',
-          :message => 'Request was successfully processed.',
-          :localized_message => 'Request was successfully processed.'
-        },
-        :track_details => {
-          :TrackingNumber => '382544330058603',
-          :TrackingNumberUniqueIdentifier => '12010~382544330058603',
-          :StatusCode => 'DL',
-          :StatusDescription => 'Delivered',
-          :CarrierCode => 'FDXG',
-          :ServiceInfo => 'FedEx Ground-U.S.',
-          :ServiceType => 'FEDEX_GROUND',
-          :package_weight => {
-            :units => 'LB',
-            :value => '19.0'
-          },
-          :packaging => 'Package',
-          :packageSequenceNumber => '1',
-          :package_count => '1',
-          :origin_location_address => {
-            :City => 'TOPEKA',
-            :StateOrProvinceCode => 'KS',
-            :country_code => 'US',
-            :residential => 'false'
-          },
-          :Shiptimestamp => '2010-05-10T00:00:00',
-          :Destinationaddress => {
-            :City => 'Windsor',
-            :StateOrProvinceCode => 'CO',
-            :country_code => 'US',
-            :residential => 'false'
-          },
-          :ActualDeliverytimestamp => '2010-05-12T08:59:14-06:00',
-          :ActualDeliveryaddress => {
-            :City => 'Fort Collins',
-            :StateOrProvinceCode => 'CO',
-            :country_code => 'US',
-            :residential => 'false'
-          },
-          :DeliverySignatureName => 'AHANSEN',
-          :SignatureProofOfDeliveryAvailable => 'true',
-          :ProofOfDeliveryNotificationsAvailable => 'false',
-          :ExceptionNotificationsAvailable => 'false',
-          :RedirectToHoldEligibility => 'INELIGIBLE',
-          :events => [
-            {
-              :timestamp => '2010-05-12T08:59:14-06:00',
-              :event_type => 'DL',
-              :event_description => 'Delivered',
-              :address => {
-                :City => 'Fort Collins',
-                :StateOrProvinceCode => 'CO',
-                :postal_code => '80528',
-                :country_code => 'US',
-                :residential => 'false',
-              },
-              :ArrivalLocation => 'DELIVERY_LOCATION',
-            },
-            {
-              :timestamp => '2010-05-12T05:46:00-06:00',
-              :event_type => 'OD',
-              :event_description => 'On FedEx vehicle for delivery',
-              :address => {
-                :City => 'JOHNSTOWN',
-                :StateOrProvinceCode => 'CO',
-                :postal_code => '80534',
-                :country_code => 'US',
-                :residential => 'false'
-              },
-              :ArrivalLocation => 'VEHICLE',
-            },
-            {
-              :timestamp => '2010-05-12T03:20:10-06:00',
-              :event_type => 'AR',
-              :event_description => 'At local FedEx facility',
-              :address => {
-                :City => 'JOHNSTOWN',
-                :StateOrProvinceCode => 'CO',
-                :postal_code => '80534',
-                :country_code => 'US',
-                :residential => 'false'
-              },
-              :ArrivalLocation => 'DESTINATION_FEDEX_FACILITY'
-            },
-            {
-              :timestamp => '2010-05-12T02:30:24-06:00',
-              :event_type => 'DP',
-              :event_description => 'Departed FedEx location',
-              :address => {
-                :City => 'HENDERSON',
-                :StateOrProvinceCode => 'CO',
-                :postal_code => '80640',
-                :country_code => 'US',
-                :residential => 'false'
-              },
-              :ArrivalLocation => 'FEDEX_FACILITY',
-            },
-            {
-              :timestamp => '2010-05-11T20:04:00-06:00',
-              :event_type => 'AR',
-              :event_description => 'Arrived at FedEx location',
-              :address => {
-                :City => 'HENDERSON',
-                :StateOrProvinceCode => 'CO',
-                :postal_code => '80640',
-                :country_code => 'US',
-                :residential => 'false',
-              },
-              :ArrivalLocation => 'FEDEX_FACILITY'
-            },
-            {
-              :timestamp => '2010-05-11T07:29:20-05:00',
-              :event_type => 'DP',
-              :event_description => 'Departed FedEx location',
-              :address => {
-                :City => 'LENEXA',
-                :StateOrProvinceCode => 'KS',
-                :postal_code => '66227',
-                :country_code => 'US',
-                :residential => 'false'
-              },
-              :ArrivalLocation => 'FEDEX_FACILITY'
-            },
-            {
-              :timestamp => '2010-05-11T01:43:00-05:00',
-              :event_type => 'AR',
-              :event_description => 'Arrived at FedEx location',
-              :address => {
-                :City => 'LENEXA',
-                :StateOrProvinceCode => 'KS',
-                :postal_code => '66227',
-                :country_code => 'US',
-                :residential => 'false'
-              },
-              :ArrivalLocation => 'FEDEX_FACILITY'
-            },
-            {
-              :timestamp => '2010-05-10T21:41:17-05:00',
-              :event_type => 'DP',
-              :event_description => 'Left FedEx origin facility',
-              :address => {
-                :City => 'TOPEKA',
-                :StateOrProvinceCode => 'KS',
-                :postal_code => '66619',
-                :country_code => 'US',
-                :residential => 'false'
-              },
-              :ArrivalLocation => 'ORIGIN_FEDEX_FACILITY'
-            },
-            {
-              :timestamp => '2010-05-10T18:55:00-05:00',
-              :event_type => 'AR',
-              :event_description => 'Arrived at FedEx location',
-              :address => {
-                :City => 'TOPEKA',
-                :StateOrProvinceCode => 'KS',
-                :postal_code => '66619',
-                :country_code => 'US',
-                :residential => 'false'
-              },
-              :ArrivalLocation => 'FEDEX_FACILITY'
-            },
-            {
-              :timestamp => '2010-05-10T16:52:00-05:00',
-              :event_type => 'PU',
-              :event_description => 'Picked up',
-              :address => {
-                :City => 'TOPEKA',
-                :StateOrProvinceCode => 'KS',
-                :postal_code => '66619',
-                :country_code => 'US',
-                :residential => 'false'
-              },
-              :ArrivalLocation => 'PICKUP_LOCATION'
-            },
-            {
-              :timestamp => '2010-05-08T08:32:00-05:00',
-              :event_type => 'OC',
-              :event_description => 'Shipment information sent to FedEx',
-              :address => {
-                :postal_code => '66619',
-                :country_code => 'US',
-                :residential => 'false'
-              },
-              :ArrivalLocation => 'CUSTOMER'
-            }
-          ]
-        }
-      }
-    }
-  end
+  let(:good_response) {
+    soap = File.read File.expand_path('../fixtures/382544330058603.xml', File.dirname(__FILE__))
+    Crack::XML.parse(soap).find_soap_body
+  }
   let(:tracking) { Tracking.new :package_identifier => '56901001514000381668' }
 
   it 'should calculate emissions based on a tracking number'
   it 'should retrieve events for a valid delivery'
+  it 'should create segments for tracking number 045720415008981' do
+    soap = File.read File.expand_path('../fixtures/045720415008981.xml', File.dirname(__FILE__))
+    crack = Crack::XML.parse(soap).find_soap_body
+    $soap_client.stub!(:track).and_return mock(Object, :to_hash => crack)
+    tracking.segments.should_not be_empty
+  end
 
   describe '#tracking_response' do
     it 'should return the hash of tracking details' do
-      $soap_client.stub!(:track).and_return good_response
+      $soap_client.stub!(:track).and_return mock(Object, :to_hash => good_response)
       tracking.tracking_response.should be_a_kind_of(Hash)
     end
     it 'should raise an error if an invalid number is entered' do
@@ -233,7 +45,7 @@ describe Tracking do
 
   describe '#weight' do
     it 'should return the package weight in lbs' do
-      $soap_client.stub!(:track).and_return good_response
+      $soap_client.stub!(:track).and_return mock(Object, :to_hash => good_response)
       tracking.weight.should == '19.0'
     end
     it 'should return nil if no weight is given' do
@@ -246,7 +58,7 @@ describe Tracking do
 
   describe '#package_count' do
     it 'should return the package package count' do
-      $soap_client.stub!(:track).and_return good_response
+      $soap_client.stub!(:track).and_return mock(Object, :to_hash => good_response)
       tracking.package_count.should == '1'
     end
     it 'should return nil if no package count is given' do
