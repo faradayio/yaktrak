@@ -38,5 +38,9 @@ module Yaktrak
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+    
+    # sabshere 1/12/11 http://docs.heroku.com/logging
+    # heroku addons:add logging:basic per https://github.com/heroku/heroku-logging
+    config.action_controller.logger = Logger.new(STDOUT)
   end
 end
