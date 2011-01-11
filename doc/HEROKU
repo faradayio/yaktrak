@@ -1,3 +1,26 @@
+LOGGING
+
+vidalia:~/github $ git clone git://github.com/heroku/heroku.git
+Cloning into heroku...
+remote: Counting objects: 4955, done.
+remote: Compressing objects: 100% (2065/2065), done.
+remote: Total 4955 (delta 3006), reused 4623 (delta 2788)
+Receiving objects: 100% (4955/4955), 534.03 KiB | 479 KiB/s, done.
+Resolving deltas: 100% (3006/3006), done.
+vidalia:~/github $ cd heroku/
+vidalia:~/github/heroku (master) $ gem build heroku.gemspec 
+WARNING:  no rubyforge_project specified
+  Successfully built RubyGem
+  Name: heroku
+  Version: 1.16.2
+  File: heroku-1.16.2.gem
+vidalia:~/github/heroku (master) $ sudo gem install heroku-1.16.2.gem 
+Successfully installed heroku-1.16.2
+1 gem installed
+
+
+INITIAL SETUP
+
 vidalia:~/yaktrak (master) $ heroku create yaktrak
 Creating yaktrak.... done
 Created http://yaktrak.heroku.com/ | git@heroku.com:yaktrak.git
