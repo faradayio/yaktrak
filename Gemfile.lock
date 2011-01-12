@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/dkastner/moneta.git
+  revision: 809a83b6d4c59f51db4116cb3f23d4795eb7ab96
+  specs:
+    moneta (0.6.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -214,6 +220,14 @@ GEM
       activesupport (>= 2.3.5)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
+    tronprint (0.0.2)
+      carbon (~> 1.0.3)
+      carbon (~> 1.0.3)
+      i18n
+      i18n
+      moneta
+      moneta
+      tronprint
     tzinfo (0.3.23)
     weighted_average (0.0.6)
       activerecord (~> 3)
@@ -232,8 +246,10 @@ DEPENDENCIES
   earth (~> 0.3.7)
   fastercsv
   httpclient (~> 2.1)
+  moneta!
   rails (= 3.0.3)
   rspec
   rspec-rails
   savon (~> 0.8)
   sqlite3-ruby
+  tronprint

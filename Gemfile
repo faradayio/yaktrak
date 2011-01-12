@@ -7,6 +7,8 @@ gem 'earth', '~>0.3.7'
 gem 'fastercsv' if RUBY_VERSION < '1.9'
 gem 'httpclient', '~>2.1' #for savon
 gem 'savon', '~>0.8'
+gem 'moneta', :git => 'git://github.com/dkastner/moneta.git'
+gem 'tronprint'
 
 group :development do
   gem 'sqlite3-ruby', :require => 'sqlite3'
