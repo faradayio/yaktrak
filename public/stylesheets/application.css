@@ -112,3 +112,7 @@ h1.yaktrak {
   text-shadow: 1px 1px 0 white;
   outline: none;
 }
+
+#new_tracking label a {
+  color: #99AFB7;
+}
