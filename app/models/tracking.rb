@@ -35,7 +35,7 @@ class Tracking < ActiveRecord::Base
   def tracking_response
     return @tracking_response unless @tracking_response.nil? 
     response = $soap_client.request :track do
-      soap.input = 'TrackRequest'
+      soap.input = 'wsdl:TrackRequest'
       soap.body = request_data
     end.to_hash
     if response[:track_reply][:highest_severity] == 'ERROR'

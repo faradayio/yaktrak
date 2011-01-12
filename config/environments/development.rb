@@ -23,10 +23,3 @@ Yaktrak::Application.configure do
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
 end
-
-FEDEX = { # DEVELOPMENT/TESTING credentials
-  :key => 'YiFzxLrnuxsbq6w2',
-  :password => 'Sb5iDOVPDpcaPazLitzVpRhPh',
-  :account => '510087747',
-  :meter => '118522702'
-}
