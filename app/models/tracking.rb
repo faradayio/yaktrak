@@ -4,7 +4,7 @@ class Tracking < ActiveRecord::Base
   set_primary_key :package_identifier
   attr_accessible :package_identifier
   
-  def request
+  def request_data
     { 'wsdl:WebAuthenticationDetail' => {
         'wsdl:UserCredential' => {
           'wsdl:Key' => FEDEX[:key],
@@ -34,9 +34,9 @@ class Tracking < ActiveRecord::Base
 
   def tracking_response
     return @tracking_response unless @tracking_response.nil? 
-    response = $soap_client.track do |soap|
+    response = $soap_client.request :track do
       soap.input = 'TrackRequest'
-      soap.body = request
+      soap.body = request_data
     end.to_hash
     if response[:track_reply][:highest_severity] == 'ERROR'
       raise Failure, "Failed to find tracking information for #{package_identifier}" 
