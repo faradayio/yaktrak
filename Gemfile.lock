@@ -104,6 +104,7 @@ GEM
     escape (0.0.4)
     falls_back_on (0.0.3)
       activerecord
+    fastercsv (1.5.4)
     ffi (0.6.3)
       rake (>= 0.8.7)
     geokit (1.5.0)
@@ -229,6 +230,7 @@ DEPENDENCIES
   cucumber
   cucumber-rails
   earth (~> 0.3.7)
+  fastercsv
   httpclient (~> 2.1)
   rails (= 3.0.3)
   rspec
