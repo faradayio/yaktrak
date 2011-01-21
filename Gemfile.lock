@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/dkastner/moneta.git
-  revision: ae697fc14fc75161e93ec782d80eddeabfe8af9d
+  revision: 3f7058a435f9598c6fbdfda403067fa10f46abcc
   specs:
     moneta (0.6.0)
 
@@ -43,7 +43,7 @@ GEM
     blockenspiel (0.3.2)
     bson (1.2.0)
     builder (2.1.2)
-    capybara (0.4.1)
+    capybara (0.4.1.1)
       celerity (>= 0.7.9)
       culerity (>= 0.2.4)
       mime-types (>= 1.16)
@@ -224,7 +224,7 @@ GEM
       activesupport (>= 2.3.5)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
-    tronprint (0.0.5)
+    tronprint (0.0.6)
       carbon (~> 1.0.3)
       i18n
       moneta
