@@ -97,6 +97,6 @@ class Tracking < ActiveRecord::Base
   end
 
   def footprint
-    segments.empty? ? 0 : segments.sum(&:footprint).round
+    @footprint ||= segments.empty? ? 0 : segments.sum(&:footprint).round
   end
 end

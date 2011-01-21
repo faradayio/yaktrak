@@ -11,5 +11,10 @@ class TrackingsController < ApplicationController
   def show
     @new_tracking = Tracking.new
     @tracking = Tracking.find_by_package_identifier params[:id]
+    begin
+      @tracking.footprint
+    rescue Tracking::Failure
+      render :failure
+    end
   end
 end

@@ -1,0 +1,15 @@
+<%= content_for :head do %>
+  <%= stylesheet_link_tag 'tracking' %>
+<% end %>
+<% @title = "#{@tracking.package_identifier} tracking failed [Yaktrak]" %>
+<div id="header">
+  <h1 class="yaktrak"><%= link_to 'Yaktrak', root_path %></h1>
+  <%= render :partial => 'form', :locals => { :tracking => @new_tracking } %>
+</div>
+<div id="main">
+  <h1 class="tracking">Sorry, we had problems tracking FedEx package <strong><%= link_to @tracking.package_identifier, "http://www.fedex.com/Tracking?tracknumbers=#{ @tracking.package_identifier }&cntry_code=us&clientype=ivshpalrt&" %></strong></h1>
+</div>
+<div id="footer">
+<p>Your friends at <%= link_to 'Brighter Planet', 'http://brighterplanet.com' %> made Yaktrak to demonstrate <%= link_to 'Carbon Middleware', 'http://brighterplanet.com/tour' %>, our brand new science-as-a-service platform. We can perform very high volumes of carbon emission calculations in real time, under the most challenging data quality situations. Perhaps we can do something like this for your business or application? <%= mail_to 'info@brighterplanet.com', 'Let us know' %>. You may be interested in our <%= link_to 'blog post', '#FIXME' %> introducing Yaktrak&mdash;or even in her <%= link_to 'source code', 'http://github.com/brighterplanet/yaktrak' %>. &copy;<%= Time.now.year %> Brighter Planet.</p>  
+<p>Yaktrak's own footprint: <%= number_with_delimiter number_with_precision(total_footprint, :precision => 4) %>kgCO<sub>2</sub>e (<%= link_to 'methodology', footprint_methodology %>)</p>
+</div>
