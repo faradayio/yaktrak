@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/dkastner/moneta.git
-  revision: 49d02bdd7942e5501ef6347693f5899171557e26
+  revision: ae697fc14fc75161e93ec782d80eddeabfe8af9d
   specs:
     moneta (0.6.0)
 
