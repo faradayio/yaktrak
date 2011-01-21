@@ -15,4 +15,5 @@
 </div>
 <div id="footer">
 <p>Your friends at <%= link_to 'Brighter Planet', 'http://brighterplanet.com' %> made Yaktrak to demonstrate <%= link_to 'Carbon Middleware', 'http://brighterplanet.com/tour' %>, our brand new science-as-a-service platform. We can perform very high volumes of carbon emission calculations in real time, under the most challenging data quality situations. Perhaps we can do something like this for your business or application? <%= mail_to 'info@brighterplanet.com', 'Let us know' %>. You may be interested in our <%= link_to 'blog post', '#FIXME' %> introducing Yaktrak&mdash;or even in her <%= link_to 'source code', 'http://github.com/brighterplanet/yaktrak' %>. &copy;<%= Time.now.year %> Brighter Planet.</p>  
+<p>Yaktrak's own footprint: <%= number_with_delimiter total_footprint %>kgCO<sub>2</sub>E (<%= link_to 'methodology', footprint_methodology %>)</p>
 </div>
