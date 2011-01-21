@@ -6,8 +6,9 @@ gem 'carbon'
 gem 'earth', '~>0.3.7'
 gem 'fastercsv' if RUBY_VERSION < '1.9'
 gem 'httpclient', '~>2.1' #for savon
-gem 'savon', '~>0.8'
 gem 'moneta', :git => 'git://github.com/dkastner/moneta.git'
+gem 'mongo'
+gem 'savon', '~>0.8'
 gem 'tronprint'
 
 group :development do
