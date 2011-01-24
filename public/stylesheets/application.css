@@ -116,3 +116,9 @@ h1.yaktrak {
 #new_tracking label a {
   color: #99AFB7;
 }
+
+.brighter_planet_cm1_badge {
+  float: right;
+  margin-right: -200px;
+  margin-left: 20px;
+}
