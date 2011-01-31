@@ -37,7 +37,11 @@ class Segment
   end
 
   def length
-    origin_zip_code.distance_to destination_zip_code
+    if origin_zip_code and destination_zip_code
+      origin_zip_code.distance_to destination_zip_code
+    else
+      0
+    end
   end
   
   def departure
@@ -45,11 +49,15 @@ class Segment
   end
   
   def arrival
-    Time.parse(arrive.to_s)
+    arrive ? Time.parse(arrive.to_s) : nil
   end
   
   def duration # in seconds
-    arrival - departure
+    if arrival and departure
+      arrival - departure
+    else
+      0
+    end
   end
   
   def duration_in_minutes
@@ -61,7 +69,11 @@ class Segment
   end
   
   def speed
-    length / duration_in_hours
+    if duration_in_hours > 0
+      length / duration_in_hours
+    else
+      0
+    end
   end
   
   def mode
@@ -82,11 +94,11 @@ class Segment
   end
   
   def origin_city
-    origin_zip_code.description
+    origin_zip_code.try(:description)
   end
   
   def destination_city
-    destination_zip_code.description
+    destination_zip_code.try(:description)
   end
   
   def range

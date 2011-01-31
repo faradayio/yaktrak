@@ -1,5 +1,6 @@
 class Tracking < ActiveRecord::Base
   class Failure < StandardError; end
+  class NoSegmentInformation < StandardError; end
 
   set_primary_key :package_identifier
   attr_accessible :package_identifier
@@ -61,7 +62,12 @@ class Tracking < ActiveRecord::Base
   end
   
   def events
-    tracking_details[:events].map do |event|
+    if tracking_details[:events].respond_to?(:keys)
+      raise NoSegmentInformation
+    else
+      events = tracking_details[:events]
+    end
+    events.map do |event|
       Event.new event[:address][:postal_code], event[:timestamp], event[:event_type] 
     end.reverse
   end
