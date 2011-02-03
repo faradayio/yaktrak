@@ -217,7 +217,7 @@ GEM
       activesupport (>= 2.3.5)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
-    tronprint (0.0.14)
+    tronprint (0.0.15)
       carbon (~> 1.0.3)
       dkastner-moneta
       i18n
