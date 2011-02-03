@@ -1,5 +1,2 @@
 --- 
-:aggregator_options: 
-  :adapter: :yaml
-  :path: /tmp/yaktrak_tronprint.yml
 :application_name: yaktrak
