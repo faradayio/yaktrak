@@ -6,7 +6,7 @@ class Segment
     provide :package_count
     provide :carrier, :key => :name
     provide :origin, :as => :origin_zip_code
-    provide :destination, :as => :destination_zip_code
+    provide :final_destination, :as => :destination_zip_code
     provide :mode_name, :as => :mode
     provide :segment_count
   end
@@ -32,6 +32,10 @@ class Segment
     @origin_zip_code ||= ZipCode.find_by_name(origin)
   end
 
+  def final_destination
+    destination || origin
+  end
+
   def destination_zip_code
     @destination_zip_code ||= ZipCode.find_by_name(destination)
   end
@@ -43,7 +47,7 @@ class Segment
       0
     end
   end
-  
+
   def departure
     Time.parse(depart.to_s)
   end
