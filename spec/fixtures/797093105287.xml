@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+<env:Header xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+<env:Body xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<v4:TrackReply xmlns:v4="http://fedex.com/ws/track/v4">
+<v4:HighestSeverity>SUCCESS</v4:HighestSeverity>
+<v4:Notifications>
+<v4:Severity>SUCCESS</v4:Severity>
+<v4:Source>trck</v4:Source>
+<v4:Code>0</v4:Code>
+<v4:Message>Request was successfully processed.</v4:Message>
+<v4:LocalizedMessage>Request was successfully processed.</v4:LocalizedMessage>
+</v4:Notifications>
+<wsdl:Version xmlns:wsdl="http://fedex.com/ws/track/v4" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<wsdl:ServiceId>trck</wsdl:ServiceId>
+<wsdl:Major>4</wsdl:Major>
+<wsdl:Intermediate>1</wsdl:Intermediate>
+<wsdl:Minor>0</wsdl:Minor>
+</wsdl:Version>
+<v4:DuplicateWaybill>false</v4:DuplicateWaybill>
+<v4:MoreData>false</v4:MoreData>
+<v4:TrackDetails>
+<v4:TrackingNumber>797093105287</v4:TrackingNumber>
+<v4:TrackingNumberUniqueIdentifier>2455694000~797093105287</v4:TrackingNumberUniqueIdentifier>
+<v4:StatusCode>DL</v4:StatusCode>
+<v4:StatusDescription>Delivered</v4:StatusDescription>
+<v4:CarrierCode>FDXE</v4:CarrierCode>
+<v4:OtherIdentifiers>
+<v4:Value>Shipping</v4:Value>
+<v4:Type>DEPARTMENT</v4:Type>
+</v4:OtherIdentifiers>
+<v4:OtherIdentifiers>
+<v4:Value>B1630</v4:Value>
+<v4:Type>INVOICE</v4:Type>
+</v4:OtherIdentifiers>
+<v4:OtherIdentifiers>
+<v4:Value>1056176</v4:Value>
+<v4:Type>PURCHASE_ORDER</v4:Type>
+</v4:OtherIdentifiers>
+<v4:OtherIdentifiers>
+<v4:Value>FRC D23Z13</v4:Value>
+<v4:Type>SHIPPER_REFERENCE</v4:Type>
+</v4:OtherIdentifiers>
+<v4:ServiceInfo>Standard Overnight</v4:ServiceInfo>
+<v4:ServiceType>STANDARD_OVERNIGHT</v4:ServiceType>
+<v4:PackageWeight>
+<v4:Units>LB</v4:Units>
+<v4:Value>5.0</v4:Value>
+</v4:PackageWeight>
+<v4:ShipmentWeight>
+<v4:Units>LB</v4:Units>
+<v4:Value>5.0</v4:Value>
+</v4:ShipmentWeight>
+<v4:Packaging>Your Packaging</v4:Packaging>
+<v4:PackageSequenceNumber>1</v4:PackageSequenceNumber>
+<v4:PackageCount>1</v4:PackageCount>
+<v4:ShipTimestamp>2011-05-12T16:07:00-07:00</v4:ShipTimestamp>
+<v4:DestinationAddress>
+<v4:City>Waukegan</v4:City>
+<v4:StateOrProvinceCode>IL</v4:StateOrProvinceCode>
+<v4:CountryCode>US</v4:CountryCode>
+<v4:Residential>false</v4:Residential>
+</v4:DestinationAddress>
+<v4:ActualDeliveryTimestamp>2011-05-13T08:24:00-05:00</v4:ActualDeliveryTimestamp>
+<v4:ActualDeliveryAddress>
+<v4:City>Waukegan</v4:City>
+<v4:StateOrProvinceCode>IL</v4:StateOrProvinceCode>
+<v4:CountryCode>US</v4:CountryCode>
+<v4:Residential>false</v4:Residential>
+</v4:ActualDeliveryAddress>
+<v4:DeliveryLocationType>SHIPPING_RECEIVING</v4:DeliveryLocationType>
+<v4:DeliveryLocationDescription>Shipping/Receiving</v4:DeliveryLocationDescription>
+<v4:DeliverySignatureName>E.ANGUAINO</v4:DeliverySignatureName>
+<v4:SignatureProofOfDeliveryAvailable>true</v4:SignatureProofOfDeliveryAvailable>
+<v4:ProofOfDeliveryNotificationsAvailable>true</v4:ProofOfDeliveryNotificationsAvailable>
+<v4:RedirectToHoldEligibility>INELIGIBLE</v4:RedirectToHoldEligibility>
+<v4:Events>
+<v4:Timestamp>2011-05-13T08:24:00-05:00</v4:Timestamp>
+<v4:EventType>DL</v4:EventType>
+<v4:EventDescription>Delivered</v4:EventDescription>
+<v4:Address>
+<v4:City>Waukegan</v4:City>
+<v4:StateOrProvinceCode>IL</v4:StateOrProvinceCode>
+<v4:PostalCode>60085</v4:PostalCode>
+<v4:CountryCode>US</v4:CountryCode>
+<v4:Residential>false</v4:Residential>
+</v4:Address>
+<v4:ArrivalLocation>DELIVERY_LOCATION</v4:ArrivalLocation>
+</v4:Events>
+<v4:Events>
+<v4:Timestamp>2011-05-13T07:30:00-05:00</v4:Timestamp>
+<v4:EventType>OD</v4:EventType>
+<v4:EventDescription>On FedEx vehicle for delivery</v4:EventDescription>
+<v4:Address>
+<v4:City>WAUKEGAN</v4:City>
+<v4:StateOrProvinceCode>IL</v4:StateOrProvinceCode>
+<v4:PostalCode>60085</v4:PostalCode>
+<v4:CountryCode>US</v4:CountryCode>
+<v4:Residential>false</v4:Residential>
+</v4:Address>
+<v4:ArrivalLocation>VEHICLE</v4:ArrivalLocation>
+</v4:Events>
+<v4:Events>
+<v4:Timestamp>2011-05-13T07:25:00-05:00</v4:Timestamp>
+<v4:EventType>AR</v4:EventType>
+<v4:EventDescription>At local FedEx facility</v4:EventDescription>
+<v4:Address>
+<v4:City>WAUKEGAN</v4:City>
+<v4:StateOrProvinceCode>IL</v4:StateOrProvinceCode>
+<v4:PostalCode>60085</v4:PostalCode>
+<v4:CountryCode>US</v4:CountryCode>
+<v4:Residential>false</v4:Residential>
+</v4:Address>
+<v4:ArrivalLocation>DESTINATION_FEDEX_FACILITY</v4:ArrivalLocation>
+</v4:Events>
+<v4:Events>
+<v4:Timestamp>2011-05-13T05:46:00-05:00</v4:Timestamp>
+<v4:EventType>AR</v4:EventType>
+<v4:EventDescription>At dest sort facility</v4:EventDescription>
+<v4:Address>
+<v4:City>CHICAGO</v4:City>
+<v4:StateOrProvinceCode>IL</v4:StateOrProvinceCode>
+<v4:PostalCode>60666</v4:PostalCode>
+<v4:CountryCode>US</v4:CountryCode>
+<v4:Residential>false</v4:Residential>
+</v4:Address>
+<v4:ArrivalLocation>SORT_FACILITY</v4:ArrivalLocation>
+</v4:Events>
+<v4:Events>
+<v4:Timestamp>2011-05-13T04:38:00-05:00</v4:Timestamp>
+<v4:EventType>DP</v4:EventType>
+<v4:EventDescription>Departed FedEx location</v4:EventDescription>
+<v4:Address>
+<v4:City>MEMPHIS</v4:City>
+<v4:StateOrProvinceCode>TN</v4:StateOrProvinceCode>
+<v4:PostalCode>38118</v4:PostalCode>
+<v4:CountryCode>US</v4:CountryCode>
+<v4:Residential>false</v4:Residential>
+</v4:Address>
+<v4:ArrivalLocation>FEDEX_FACILITY</v4:ArrivalLocation>
+</v4:Events>
+<v4:Events>
+<v4:Timestamp>2011-05-13T00:32:00-05:00</v4:Timestamp>
+<v4:EventType>AR</v4:EventType>
+<v4:EventDescription>Arrived at FedEx location</v4:EventDescription>
+<v4:Address>
+<v4:City>MEMPHIS</v4:City>
+<v4:StateOrProvinceCode>TN</v4:StateOrProvinceCode>
+<v4:PostalCode>38118</v4:PostalCode>
+<v4:CountryCode>US</v4:CountryCode>
+<v4:Residential>false</v4:Residential>
+</v4:Address>
+<v4:ArrivalLocation>FEDEX_FACILITY</v4:ArrivalLocation>
+</v4:Events>
+<v4:Events>
+<v4:Timestamp>2011-05-12T17:30:00-07:00</v4:Timestamp>
+<v4:EventType>DP</v4:EventType>
+<v4:EventDescription>Left FedEx origin facility</v4:EventDescription>
+<v4:Address>
+<v4:City>LAS VEGAS</v4:City>
+<v4:StateOrProvinceCode>NV</v4:StateOrProvinceCode>
+<v4:PostalCode>89113</v4:PostalCode>
+<v4:CountryCode>US</v4:CountryCode>
+<v4:Residential>false</v4:Residential>
+</v4:Address>
+<v4:ArrivalLocation>ORIGIN_FEDEX_FACILITY</v4:ArrivalLocation>
+</v4:Events>
+<v4:Events>
+<v4:Timestamp>2011-05-12T16:07:00-07:00</v4:Timestamp>
+<v4:EventType>PU</v4:EventType>
+<v4:EventDescription>Picked up</v4:EventDescription>
+<v4:Address>
+<v4:City>LAS VEGAS</v4:City>
+<v4:StateOrProvinceCode>NV</v4:StateOrProvinceCode>
+<v4:PostalCode>89113</v4:PostalCode>
+<v4:CountryCode>US</v4:CountryCode>
+<v4:Residential>false</v4:Residential>
+</v4:Address>
+<v4:ArrivalLocation>PICKUP_LOCATION</v4:ArrivalLocation>
+</v4:Events>
+<v4:Events>
+<v4:Timestamp>2011-05-12T16:24:04-05:00</v4:Timestamp>
+<v4:EventType>OC</v4:EventType>
+<v4:EventDescription>Shipment information sent to FedEx</v4:EventDescription>
+<v4:Address>
+<v4:Residential>false</v4:Residential>
+</v4:Address>
+<v4:ArrivalLocation>CUSTOMER</v4:ArrivalLocation>
+</v4:Events>
+</v4:TrackDetails>
+</v4:TrackReply>
+</env:Body>
+</soapenv:Envelope>

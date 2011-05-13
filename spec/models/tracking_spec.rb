@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'crack'
 
 describe Tracking do
   let(:bad_response) do
@@ -26,8 +27,18 @@ describe Tracking do
   it 'should create segments for tracking number 045720415008981' do
     soap = File.read File.expand_path('../fixtures/045720415008981.xml', File.dirname(__FILE__))
     crack = Crack::XML.parse(soap).find_soap_body
-    $soap_client.stub!(:track).and_return mock(Object, :to_hash => crack)
+    $soap_client.stub!(:request).and_return mock(Object, :to_hash => crack)
     tracking.segments.should_not be_empty
+  end
+  it 'should create segments for tracking number 797093105287' do
+    soap = File.read File.expand_path('../fixtures/797093105287.xml', File.dirname(__FILE__))
+    crack = Crack::XML.parse(soap).find_soap_body
+    $soap_client.stub!(:request).and_return mock(Object, :to_hash => crack)
+    puts tracking.segments.inspect
+    tracking.segments.length.should == 4
+    tracking.segments.each do |segment|
+      segment.mode_with_indefinite_article.should_not be_nil
+    end
   end
 
   describe '#tracking_response' do

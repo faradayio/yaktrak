@@ -100,9 +100,13 @@ class Segment
   def destination_city
     destination_zip_code.try(:description)
   end
+
+  def in_town?
+    origin_city == destination_city || destination.nil?
+  end
   
   def range
-    if origin_city == destination_city
+    if in_town?
       "Within #{origin_city}"
     else
       "#{origin_city}&ndash;#{destination_city}"
