@@ -34,6 +34,11 @@ class Tracking < ActiveRecord::Base
     }
   end
 
+  def international?(response)
+    return true if response[:track_reply][:track_details] && response[:track_reply][:track_details][:service_info] =~ /International/i
+    return response[:track_reply][:track_details][:events].any? { |e| e[:address][:country_code] != 'US' }
+  end
+
   def tracking_response
     return @tracking_response unless @tracking_response.nil? 
     response = $soap_client.request :track do
@@ -42,7 +47,7 @@ class Tracking < ActiveRecord::Base
     end.to_hash
     if response[:track_reply][:highest_severity] == 'ERROR'
       raise Failure, "Failed to find tracking information for #{package_identifier}" 
-    elsif response[:track_reply][:track_details] && response[:track_reply][:track_details][:service_info] =~ /International/i
+    elsif international?(response)
       raise International
     end
     @tracking_response = response
