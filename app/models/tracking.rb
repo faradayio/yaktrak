@@ -95,6 +95,12 @@ class Tracking < ActiveRecord::Base
         memo.last.destination = event.zipcode
         memo.last.arrive = event.timestamp
       end
+
+      if memo.last.depart.nil?
+        previous = memo[memo.length - 2]
+        memo.last.depart = previous.arrive || previous.depart
+      end
+
       memo
     end
   end

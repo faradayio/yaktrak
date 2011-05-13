@@ -38,6 +38,7 @@ describe Tracking do
     tracking.segments.length.should == 4
     tracking.segments.each do |segment|
       segment.mode_with_indefinite_article.should_not be_nil
+      segment.departure.should be_a_kind_of(Time)
     end
   end
 
