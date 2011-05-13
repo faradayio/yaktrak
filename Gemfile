@@ -3,9 +3,10 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.3'
 
 gem 'carbon'
-gem 'earth', '~>0.3.7'
+gem 'earth'
+gem 'hoptoad_notifier'
 gem 'httpclient', '~>2.1' #for savon
-gem 'moneta', :git => 'git://github.com/dkastner/moneta.git'
+gem 'dkastner-moneta'
 gem 'mongo'
 gem 'savon', '~>0.8'
 gem 'tronprint'
