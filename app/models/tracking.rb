@@ -59,8 +59,10 @@ class Tracking < ActiveRecord::Base
   end
 
   def package_count
-    if tracking_details[:package_count]
+    if tracking_details[:package_count] && tracking_details[:package_count].to_i > 0
       tracking_details[:package_count]
+    else
+      1
     end
   end
   
