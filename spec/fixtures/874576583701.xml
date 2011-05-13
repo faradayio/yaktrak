@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+<env:Header xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+<env:Body xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<v4:TrackReply xmlns:v4="http://fedex.com/ws/track/v4">
+  <v4:HighestSeverity>SUCCESS</v4:HighestSeverity>
+  <v4:Notifications>
+    <v4:Severity>SUCCESS</v4:Severity>
+    <v4:Source>trck</v4:Source>
+    <v4:Code>0</v4:Code>
+    <v4:Message>Request was successfully processed.</v4:Message>
+    <v4:LocalizedMessage>Request was successfully processed.</v4:LocalizedMessage>
+  </v4:Notifications>
+  <wsdl:Version xmlns:wsdl="http://fedex.com/ws/track/v4" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:ServiceId>trck</wsdl:ServiceId>
+    <wsdl:Major>4</wsdl:Major>
+    <wsdl:Intermediate>1</wsdl:Intermediate>
+    <wsdl:Minor>0</wsdl:Minor>
+  </wsdl:Version>
+  <v4:DuplicateWaybill>false</v4:DuplicateWaybill>
+  <v4:MoreData>false</v4:MoreData>
+  <v4:TrackDetails>
+    <v4:TrackingNumber>874576583701</v4:TrackingNumber>
+    <v4:TrackingNumberUniqueIdentifier>2455692000~874576583701</v4:TrackingNumberUniqueIdentifier>
+    <v4:StatusCode>OD</v4:StatusCode>
+    <v4:StatusDescription>On FedEx vehicle for delivery</v4:StatusDescription>
+    <v4:CarrierCode>FDXE</v4:CarrierCode>
+    <v4:OtherIdentifiers>
+      <v4:Value>874576583701</v4:Value>
+      <v4:Type>STANDARD_MPS</v4:Type>
+    </v4:OtherIdentifiers>
+    <v4:ServiceInfo>International Priority Service</v4:ServiceInfo>
+    <v4:ServiceType>PRIORITY_OVERNIGHT</v4:ServiceType>
+    <v4:PackageWeight>
+      <v4:Units>LB</v4:Units>
+      <v4:Value>9.4</v4:Value>
+    </v4:PackageWeight>
+    <v4:ShipmentWeight>
+      <v4:Units>KG</v4:Units>
+      <v4:Value>11.3</v4:Value>
+    </v4:ShipmentWeight>
+    <v4:Packaging>Your Packaging</v4:Packaging>
+    <v4:PackageSequenceNumber>2</v4:PackageSequenceNumber>
+    <v4:PackageCount>2</v4:PackageCount>
+    <v4:ShipTimestamp>2011-05-10T15:35:00-05:00</v4:ShipTimestamp>
+    <v4:DestinationAddress>
+      <v4:City>GUACARI</v4:City>
+      <v4:CountryCode>CO</v4:CountryCode>
+      <v4:Residential>false</v4:Residential>
+    </v4:DestinationAddress>
+    <v4:EstimatedDeliveryTimestamp>2011-05-16T18:00:00-06:00</v4:EstimatedDeliveryTimestamp>
+    <v4:SignatureProofOfDeliveryAvailable>false</v4:SignatureProofOfDeliveryAvailable>
+    <v4:ProofOfDeliveryNotificationsAvailable>true</v4:ProofOfDeliveryNotificationsAvailable>
+    <v4:ExceptionNotificationsAvailable>true</v4:ExceptionNotificationsAvailable>
+    <v4:RedirectToHoldEligibility>INELIGIBLE</v4:RedirectToHoldEligibility>
+    <v4:Events>
+      <v4:Timestamp>2011-05-12T08:54:00-05:00</v4:Timestamp>
+      <v4:EventType>DE</v4:EventType>
+      <v4:EventDescription>Delivery exception</v4:EventDescription>
+      <v4:StatusExceptionCode>93</v4:StatusExceptionCode>
+      <v4:StatusExceptionDescription>Held, unable to collect payment</v4:StatusExceptionDescription>
+      <v4:Address>
+      <v4:City>CALI</v4:City>
+      <v4:StateOrProvinceCode>VC</v4:StateOrProvinceCode>
+      <v4:PostalCode>99998</v4:PostalCode>
+      <v4:CountryCode>CO</v4:CountryCode>
+      <v4:Residential>false</v4:Residential>
+      </v4:Address>
+      <v4:ArrivalLocation>DELIVERY_LOCATION</v4:ArrivalLocation>
+    </v4:Events>
+    <v4:Events>
+      <v4:Timestamp>2011-05-12T08:54:00-05:00</v4:Timestamp>
+      <v4:EventType>OD</v4:EventType>
+      <v4:EventDescription>On FedEx vehicle for delivery</v4:EventDescription>
+      <v4:Address>
+      <v4:City>CALI</v4:City>
+      <v4:StateOrProvinceCode>VC</v4:StateOrProvinceCode>
+      <v4:PostalCode>99998</v4:PostalCode>
+      <v4:CountryCode>CO</v4:CountryCode>
+      <v4:Residential>false</v4:Residential>
+      </v4:Address>
+      <v4:ArrivalLocation>VEHICLE</v4:ArrivalLocation>
+    </v4:Events>
+  <v4:Events>
+  <v4:Timestamp>2011-05-12T07:34:00-05:00</v4:Timestamp>
+  <v4:EventType>AR</v4:EventType>
+  <v4:EventDescription>At local FedEx facility</v4:EventDescription>
+  <v4:Address>
+  <v4:City>CALI</v4:City>
+  <v4:StateOrProvinceCode>VC</v4:StateOrProvinceCode>
+  <v4:PostalCode>99998</v4:PostalCode>
+  <v4:CountryCode>CO</v4:CountryCode>
+  <v4:Residential>false</v4:Residential>
+  </v4:Address>
+  <v4:ArrivalLocation>DESTINATION_FEDEX_FACILITY</v4:ArrivalLocation>
+  </v4:Events>
+  <v4:Events>
+  <v4:Timestamp>2011-05-11T20:35:00-05:00</v4:Timestamp>
+  <v4:EventType>IT</v4:EventType>
+  <v4:EventDescription>In transit</v4:EventDescription>
+  <v4:Address>
+  <v4:City>BOGOTA</v4:City>
+  <v4:PostalCode>99999</v4:PostalCode>
+  <v4:CountryCode>CO</v4:CountryCode>
+  <v4:Residential>false</v4:Residential>
+  </v4:Address>
+  <v4:ArrivalLocation>FEDEX_FACILITY</v4:ArrivalLocation>
+  </v4:Events>
+  <v4:Events>
+  <v4:Timestamp>2011-05-11T20:12:00-05:00</v4:Timestamp>
+  <v4:EventType>CC</v4:EventType>
+  <v4:EventDescription>Int'l shipment release</v4:EventDescription>
+  <v4:Address>
+  <v4:City>BOGOTA</v4:City>
+  <v4:PostalCode>99999</v4:PostalCode>
+  <v4:CountryCode>CO</v4:CountryCode>
+  <v4:Residential>false</v4:Residential>
+  </v4:Address>
+  <v4:ArrivalLocation>FEDEX_FACILITY</v4:ArrivalLocation>
+  </v4:Events>
+  <v4:Events>
+  <v4:Timestamp>2011-05-11T17:22:00-05:00</v4:Timestamp>
+  <v4:EventType>IT</v4:EventType>
+  <v4:EventDescription>In transit</v4:EventDescription>
+  <v4:StatusExceptionCode>71</v4:StatusExceptionCode>
+  <v4:StatusExceptionDescription>Package available for clearance</v4:StatusExceptionDescription>
+  <v4:Address>
+  <v4:City>BOGOTA</v4:City>
+  <v4:PostalCode>99999</v4:PostalCode>
+  <v4:CountryCode>CO</v4:CountryCode>
+  <v4:Residential>false</v4:Residential>
+  </v4:Address>
+  <v4:ArrivalLocation>FEDEX_FACILITY</v4:ArrivalLocation>
+  </v4:Events>
+  <v4:Events>
+  <v4:Timestamp>2011-05-11T13:36:00-05:00</v4:Timestamp>
+  <v4:EventType>AR</v4:EventType>
+  <v4:EventDescription>At dest sort facility</v4:EventDescription>
+  <v4:Address>
+  <v4:City>BOGOTA</v4:City>
+  <v4:StateOrProvinceCode>CU</v4:StateOrProvinceCode>
+  <v4:PostalCode>99999</v4:PostalCode>
+  <v4:CountryCode>CO</v4:CountryCode>
+  <v4:Residential>false</v4:Residential>
+  </v4:Address>
+  <v4:ArrivalLocation>SORT_FACILITY</v4:ArrivalLocation>
+  </v4:Events>
+  <v4:Events>
+  <v4:Timestamp>2011-05-11T12:40:00-04:30</v4:Timestamp>
+  <v4:EventType>IT</v4:EventType>
+  <v4:EventDescription>In transit</v4:EventDescription>
+  <v4:Address>
+  <v4:City>VALENCIA</v4:City>
+  <v4:PostalCode>2002</v4:PostalCode>
+  <v4:CountryCode>VE</v4:CountryCode>
+  <v4:Residential>false</v4:Residential>
+  </v4:Address>
+  <v4:ArrivalLocation>FEDEX_FACILITY</v4:ArrivalLocation>
+  </v4:Events>
+  <v4:Events>
+  <v4:Timestamp>2011-05-11T08:44:00-04:00</v4:Timestamp>
+  <v4:EventType>IT</v4:EventType>
+  <v4:EventDescription>In transit</v4:EventDescription>
+  <v4:Address>
+  <v4:City>MIAMI</v4:City>
+  <v4:StateOrProvinceCode>FL</v4:StateOrProvinceCode>
+  <v4:PostalCode>33166</v4:PostalCode>
+  <v4:CountryCode>US</v4:CountryCode>
+  <v4:Residential>false</v4:Residential>
+  </v4:Address>
+  <v4:ArrivalLocation>FEDEX_FACILITY</v4:ArrivalLocation>
+  </v4:Events>
+  <v4:Events>
+  <v4:Timestamp>2011-05-11T05:06:00-05:00</v4:Timestamp>
+  <v4:EventType>IT</v4:EventType>
+  <v4:EventDescription>In transit</v4:EventDescription>
+  <v4:Address>
+  <v4:City>MEMPHIS</v4:City>
+  <v4:StateOrProvinceCode>TN</v4:StateOrProvinceCode>
+  <v4:PostalCode>38118</v4:PostalCode>
+  <v4:CountryCode>US</v4:CountryCode>
+  <v4:Residential>false</v4:Residential>
+  </v4:Address>
+  <v4:ArrivalLocation>FEDEX_FACILITY</v4:ArrivalLocation>
+  </v4:Events>
+  <v4:Events>
+  <v4:Timestamp>2011-05-11T04:03:00-05:00</v4:Timestamp>
+  <v4:EventType>DP</v4:EventType>
+  <v4:EventDescription>Departed FedEx location</v4:EventDescription>
+  <v4:Address>
+  <v4:City>MEMPHIS</v4:City>
+  <v4:StateOrProvinceCode>TN</v4:StateOrProvinceCode>
+  <v4:PostalCode>38118</v4:PostalCode>
+  <v4:CountryCode>US</v4:CountryCode>
+  <v4:Residential>false</v4:Residential>
+  </v4:Address>
+  <v4:ArrivalLocation>FEDEX_FACILITY</v4:ArrivalLocation>
+  </v4:Events>
+  <v4:Events>
+  <v4:Timestamp>2011-05-11T00:11:00-05:00</v4:Timestamp>
+  <v4:EventType>DP</v4:EventType>
+  <v4:EventDescription>Departed FedEx location</v4:EventDescription>
+  <v4:Address>
+  <v4:City>MEMPHIS</v4:City>
+  <v4:StateOrProvinceCode>TN</v4:StateOrProvinceCode>
+  <v4:PostalCode>38118</v4:PostalCode>
+  <v4:CountryCode>US</v4:CountryCode>
+  <v4:Residential>false</v4:Residential>
+  </v4:Address>
+  <v4:ArrivalLocation>FEDEX_FACILITY</v4:ArrivalLocation>
+  </v4:Events>
+  <v4:Events>
+  <v4:Timestamp>2011-05-10T22:59:00-05:00</v4:Timestamp>
+  <v4:EventType>AR</v4:EventType>
+  <v4:EventDescription>Arrived at FedEx location</v4:EventDescription>
+  <v4:Address>
+  <v4:City>MEMPHIS</v4:City>
+  <v4:StateOrProvinceCode>TN</v4:StateOrProvinceCode>
+  <v4:PostalCode>38118</v4:PostalCode>
+  <v4:CountryCode>US</v4:CountryCode>
+  <v4:Residential>false</v4:Residential>
+  </v4:Address>
+  <v4:ArrivalLocation>FEDEX_FACILITY</v4:ArrivalLocation>
+  </v4:Events>
+  <v4:Events>
+  <v4:Timestamp>2011-05-10T21:03:00-05:00</v4:Timestamp>
+  <v4:EventType>IT</v4:EventType>
+  <v4:EventDescription>In transit</v4:EventDescription>
+  <v4:Address>
+  <v4:City>APODACA</v4:City>
+  <v4:StateOrProvinceCode>NL</v4:StateOrProvinceCode>
+  <v4:PostalCode>66600</v4:PostalCode>
+  <v4:CountryCode>MX</v4:CountryCode>
+  <v4:Residential>false</v4:Residential>
+  </v4:Address>
+  <v4:ArrivalLocation>FEDEX_FACILITY</v4:ArrivalLocation>
+  </v4:Events>
+  <v4:Events>
+  <v4:Timestamp>2011-05-10T18:49:00-05:00</v4:Timestamp>
+  <v4:EventType>DP</v4:EventType>
+  <v4:EventDescription>Left FedEx origin facility</v4:EventDescription>
+  <v4:Address>
+  <v4:City>APODACA</v4:City>
+  <v4:StateOrProvinceCode>NL</v4:StateOrProvinceCode>
+  <v4:PostalCode>66600</v4:PostalCode>
+  <v4:CountryCode>MX</v4:CountryCode>
+  <v4:Residential>false</v4:Residential>
+  </v4:Address>
+  <v4:ArrivalLocation>ORIGIN_FEDEX_FACILITY</v4:ArrivalLocation>
+  </v4:Events>
+  <v4:Events>
+  <v4:Timestamp>2011-05-10T15:35:00-05:00</v4:Timestamp>
+  <v4:EventType>PU</v4:EventType>
+  <v4:EventDescription>Picked up</v4:EventDescription>
+  <v4:Address>
+  <v4:City>SAN PEDRO GARZA GARCIA</v4:City>
+  <v4:StateOrProvinceCode>NL</v4:StateOrProvinceCode>
+  <v4:PostalCode>66220</v4:PostalCode>
+  <v4:CountryCode>MX</v4:CountryCode>
+  <v4:Residential>false</v4:Residential>
+  </v4:Address>
+  <v4:ArrivalLocation>PICKUP_LOCATION</v4:ArrivalLocation>
+  </v4:Events>
+  </v4:TrackDetails>
+</v4:TrackReply>
+</env:Body>
+</soapenv:Envelope>

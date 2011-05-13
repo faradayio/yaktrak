@@ -15,6 +15,8 @@ class TrackingsController < ApplicationController
       @tracking.footprint
     rescue Tracking::Failure
       render :failure
+    rescue Tracking::International
+      render :international
     rescue Tracking::NoSegmentInformation
       render :too_old
     end

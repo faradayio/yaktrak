@@ -1,5 +1,6 @@
 class Tracking < ActiveRecord::Base
   class Failure < StandardError; end
+  class International < StandardError; end
   class NoSegmentInformation < StandardError; end
 
   set_primary_key :package_identifier
@@ -41,6 +42,8 @@ class Tracking < ActiveRecord::Base
     end.to_hash
     if response[:track_reply][:highest_severity] == 'ERROR'
       raise Failure, "Failed to find tracking information for #{package_identifier}" 
+    elsif response[:track_reply][:track_details] && response[:track_reply][:track_details][:service_info] =~ /International/i
+      raise International
     end
     @tracking_response = response
   end
