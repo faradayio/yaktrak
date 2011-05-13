@@ -17,6 +17,7 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'crack'
   gem 'cucumber'
   gem 'cucumber-rails'
   gem 'rspec'
