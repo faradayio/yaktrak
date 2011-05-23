@@ -36,7 +36,10 @@ class Tracking < ActiveRecord::Base
 
   def international?(response)
     return true if response[:track_reply][:track_details] && response[:track_reply][:track_details][:service_info] =~ /International/i
-    return response[:track_reply][:track_details][:events].any? { |e| e[:address][:country_code] != 'US' }
+    any_non_us_country_codes = response[:track_reply][:track_details][:events].any? do |e|
+      e.is_a?(Hash) && e[:address][:country_code] != 'US'
+    end
+    return any_non_us_country_codes
   end
 
   def tracking_response
