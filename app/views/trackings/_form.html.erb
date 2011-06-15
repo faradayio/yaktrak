@@ -3,6 +3,6 @@
 <%= f.label :package_identifier, render(:partial => 'label') %>
 <p><%= f.text_field :package_identifier %><%= submit_tag 'Track' %></p>
 <p id="help"><%= link_to 'What is this?', '#FIXME' %> &copy;2010 Brighter Planet. FedEx is a registered trademark of FedEx Corporation.</p>
-<p id="own_footprint">Yaktrak's own footprint: <%= number_with_delimiter number_with_precision(total_footprint, :precision => 4) %>kgCO<sub>2</sub>e (<%= link_to 'methodology', footprint_methodology %>)</p>
+<%= footprint_badge %>
 <% end %>
 

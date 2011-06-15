@@ -46,13 +46,13 @@ h2 {
   margin: 0 0 0 200px;
 }
 
-#new_tracking p#help, #new_tracking p#own_footprint {
+#new_tracking p#help, #new_tracking p.cm1-footprint {
   margin: 0 0 0 238px;
   font-size: 13px;
   color: #99afb7;
   text-shadow: 1px 1px 0 #455559;
 }
 
-#new_tracking p#help a, #new_tracking p#own_footprint a {
+#new_tracking p#help a, #new_tracking p.cm1-footprint a {
   color: #c9d1d3;
 }
