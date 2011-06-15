@@ -1,3 +1,11 @@
+PATH
+  remote: ~/tronprint
+  specs:
+    tronprint (1.0.0)
+      carbon (~> 1.0.3)
+      dkastner-moneta (~> 1.0.5)
+      i18n
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -232,10 +240,6 @@ GEM
     to_regexp (0.0.3)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
-    tronprint (1.0.0)
-      carbon (~> 1.0.3)
-      dkastner-moneta (~> 1.0.5)
-      i18n
     tzinfo (0.3.28)
     weighted_average (0.0.6)
       activerecord (~> 3)
@@ -263,4 +267,4 @@ DEPENDENCIES
   rspec-rails
   savon (~> 0.8)
   sqlite3-ruby
-  tronprint (~> 1.0.0)
+  tronprint!
