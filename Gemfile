@@ -9,7 +9,7 @@ gem 'httpclient', '~>2.1' #for savon
 gem 'dkastner-moneta'
 gem 'mongo'
 gem 'savon', '~>0.8'
-gem 'tronprint', '~> 1.0.1'
+gem 'tronprint', '~> 1.2.1'
 
 group :development do
   gem 'sqlite3-ruby', :require => 'sqlite3'
