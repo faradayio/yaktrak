@@ -46,13 +46,13 @@ h2 {
   margin: 0 0 0 200px;
 }
 
-#new_tracking p#help, #new_tracking p.cm1-footprint, p.cm1-tronprint-link {
+#new_tracking p#help, #new_tracking p.tronprint-footprint, p.tronprint-link {
   margin: 0 0 0 238px;
   font-size: 13px;
   color: #99afb7;
   text-shadow: 1px 1px 0 #455559;
 }
 
-#new_tracking p#help a, #new_tracking p.cm1-footprint a, p.cm1-tronprint-link a {
+#new_tracking p#help a, #new_tracking p.tronprint-footprint a, p.tronprint-link a {
   color: #c9d1d3;
 }
