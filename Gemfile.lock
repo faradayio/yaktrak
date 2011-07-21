@@ -252,7 +252,7 @@ GEM
     to_regexp (0.0.3)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
-    tronprint (1.2.1)
+    tronprint (1.2.2)
       carbon (~> 1.1.1)
       dkastner-moneta (~> 1.1.1)
       i18n
@@ -285,4 +285,4 @@ DEPENDENCIES
   rspec-rails
   savon (~> 0.8)
   sqlite3-ruby
-  tronprint (~> 1.2.1)
+  tronprint (~> 1.2.2)
