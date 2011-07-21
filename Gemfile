@@ -9,6 +9,7 @@ gem 'httpclient', '~>2.1' #for savon
 gem 'dkastner-moneta'
 gem 'mongo'
 gem 'savon', '0.9.2'
+  gem 'nori', '0.2.3'
 gem 'tronprint', '~> 1.2.2'
 
 group :development do
