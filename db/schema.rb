@@ -18,17 +18,4 @@ ActiveRecord::Schema.define(:version => 20101119032314) do
     t.datetime "updated_at"
   end
 
-  create_table "zip_codes", :primary_key => "name", :force => true do |t|
-    t.string    "state_postal_abbreviation"
-    t.string    "description"
-    t.string    "latitude"
-    t.string    "longitude"
-    t.string    "egrid_subregion_abbreviation"
-    t.string    "climate_division_name"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-  end
-
-  add_index "zip_codes", ["name"], :name => "sqlite_autoindex_zip_codes_1", :unique => true
-
 end
