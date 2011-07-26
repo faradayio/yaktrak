@@ -1,4 +1,6 @@
+require 'timeout'
 class Tracking < ActiveRecord::Base
+  TIMEOUT = 7
   class Failure < StandardError; end
   class International < StandardError; end
   class NoSegmentInformation < StandardError; end
@@ -44,10 +46,16 @@ class Tracking < ActiveRecord::Base
 
   def tracking_response
     return @tracking_response unless @tracking_response.nil? 
-    response = $soap_client.request :track do
-      soap.input = 'wsdl:TrackRequest'
-      soap.body = request_data
-    end.to_hash
+    response = begin
+      ::Timeout.timeout(TIMEOUT) do
+        $soap_client.request :track do
+          soap.input = 'wsdl:TrackRequest'
+          soap.body = request_data
+        end.to_hash
+      end
+    rescue ::Timeout::Error
+      raise Failure, "Timed out while trying to get information for #{package_identifier}"
+    end
     if response[:track_reply][:highest_severity] == 'ERROR'
       raise Failure, "Failed to find tracking information for #{package_identifier}" 
     elsif international?(response)
