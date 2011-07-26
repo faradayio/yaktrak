@@ -4,3 +4,4 @@ log/*.log
 tmp/**/*
 *~
 config/fedex.yml
+tronprint_stats.yml
