@@ -13,6 +13,7 @@ gem 'mongo'
 gem 'savon', '0.9.2'
 gem 'nori', '0.2.3'
 gem 'tronprint'
+gem 'bson_ext'
 
 group :production do
   gem 'dalli'
