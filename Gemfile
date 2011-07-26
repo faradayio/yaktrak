@@ -1,16 +1,22 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.3'
+gem 'rails', '3.0.9'
 
 gem 'carbon'
+gem 'cache_method'
+gem 'lock_method'
+gem 'cache'
 gem 'earth'
 gem 'hoptoad_notifier'
 gem 'httpclient', '~>2.1' #for savon
-gem 'dkastner-moneta'
 gem 'mongo'
 gem 'savon', '0.9.2'
-  gem 'nori', '0.2.3'
-gem 'tronprint', '~> 1.2.2'
+gem 'nori', '0.2.3'
+gem 'tronprint'
+
+group :production do
+  gem 'dalli'
+end
 
 group :development do
   gem 'sqlite3-ruby', :require => 'sqlite3'
