@@ -19,6 +19,7 @@ group :production do
 end
 
 group :development do
+  gem 'thin'
   gem 'sqlite3-ruby', :require => 'sqlite3'
 end
 
