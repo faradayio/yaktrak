@@ -120,3 +120,7 @@ h1.yaktrak {
 .brighter_planet_cm1_badge {
   margin: 0 0 10px 0;
 }
+
+#new_tracking .brighter_planet_cm1_badge {
+  margin: 10px 0 0 237px;
+}
