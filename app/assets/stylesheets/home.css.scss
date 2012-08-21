@@ -1,11 +1,11 @@
 body {
-  background-image: url(/assets/home.png);
+  background-image: image-url(home.png);
   background-repeat: no-repeat;
 }
 
 h1 {
   margin: 120px 20px 10px 255px;
-  background: url(/assets/yaktrak.png) no-repeat;
+  background: image-url(yaktrak.png) no-repeat;
   width: 276px;
   height: 181px;
 }
