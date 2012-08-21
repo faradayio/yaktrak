@@ -15,6 +15,7 @@ gem 'mongo'
 gem 'nori', '0.2.3'
 gem 'savon', '0.9.2'
 gem 'tronprint'
+gem 'unicorn'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -30,7 +31,6 @@ end
 
 group :development do
   gem 'sqlite3-ruby', :require => 'sqlite3'
-  gem 'unicorn'
 end
 
 group :test do
