@@ -1,24 +1,26 @@
 require 'timeout'
 class Tracking < ActiveRecord::Base
   TIMEOUT = 7
+  EXAMPLE = '993557760428328'
+
   class Failure < StandardError; end
   class International < StandardError; end
   class NoSegmentInformation < StandardError; end
 
-  set_primary_key :package_identifier
+  primary_key = :package_identifier
   attr_accessible :package_identifier
   
   def request_data
     { 'wsdl:WebAuthenticationDetail' => {
         'wsdl:UserCredential' => {
-          'wsdl:Key' => FEDEX[:key],
-          'wsdl:Password' => FEDEX[:password],
+          'wsdl:Key' => ENV['FEDEX_KEY'],
+          'wsdl:Password' => ENV['FEDEX_PASSWORD'],
           :order! => ['wsdl:Key', 'wsdl:Password']
         }
       },
       'wsdl:ClientDetail' => {
-        'wsdl:AccountNumber' => FEDEX[:account],
-        'wsdl:MeterNumber' => FEDEX[:meter]
+        'wsdl:AccountNumber' => ENV['FEDEX_ACCOUNT'],
+        'wsdl:MeterNumber' => ENV['FEDEX_METER']
       },
       'wsdl:Version' => {
         'wsdl:ServiceId' => 'trck',
@@ -131,5 +133,13 @@ class Tracking < ActiveRecord::Base
 
   def footprint
     @footprint ||= segments.empty? ? 0 : segments.sum(&:footprint).round
+  end
+
+  def example?
+    package_identifier == EXAMPLE
+  end
+
+  def to_param
+    package_identifier
   end
 end

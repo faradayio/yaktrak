@@ -33,10 +33,3 @@ Yaktrak::Application.configure do
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
 end
-
-FEDEX = { # DEVELOPMENT/TESTING credentials
-  :key => 'YiFzxLrnuxsbq6w2',
-  :password => 'Sb5iDOVPDpcaPazLitzVpRhPh',
-  :account => '510087747',
-  :meter => '118522702'
-}

@@ -51,7 +51,7 @@ describe Tracking do
       $soap_client.stub!(:track).and_return bad_response
       expect do
         tracking.tracking_response
-      end.should raise_error(Tracking::Failure)
+      end.to raise_error(Tracking::Failure)
     end
   end
 

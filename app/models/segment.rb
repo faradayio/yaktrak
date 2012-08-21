@@ -1,3 +1,6 @@
+require 'earth'
+require 'earth/locality/zip_code'
+
 class Segment
   include Carbon
 
