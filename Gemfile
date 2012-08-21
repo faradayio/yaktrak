@@ -8,6 +8,7 @@ gem 'cache'
 gem 'cache_method'
 gem 'carbon'
 gem 'earth'
+gem 'fozzie'
 gem 'httpclient', '~>2.1' #for savon
 gem 'lock_method'
 gem 'mongo'
