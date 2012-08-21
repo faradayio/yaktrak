@@ -2,40 +2,40 @@
 
 @font-face {
   font-family: 'Brighter Planet';
-  src: asset-url('KievitWebPro.eot', font);
-  src: local('☺'), asset-url("KievitWebPro.woff", font) format("woff"), asset-url("KievitOT-Regular.otf", font) format("opentype");
+  src: asset-url('KievitWebPro.eot');
+  src: local('☺'), asset-url("KievitWebPro.woff") format("woff"), asset-url("KievitOT-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Brighter Planet';
-  src: asset-url('KievitWebPro-Bold.eot', font);
-  src: local('☺'), asset-url("KievitWebPro-Bold.woff", font) format("woff"), asset-url("KievitOT-Bold.otf", font) format("opentype");
+  src: asset-url('KievitWebPro-Bold.eot');
+  src: local('☺'), asset-url("KievitWebPro-Bold.woff") format("woff"), url("fonts/KievitOT-Bold.otf") format("opentype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Brighter Planet';
-  src: asset-url('KievitWebPro-BoldIta.eot', font);
-  src: local('☺'), asset-url("KievitWebPro-BoldIta.woff", font) format("woff"), asset-url("KievitOT-BoldItalic.otf", font) format("opentype");
+  src: asset-url('KievitWebPro-BoldIta.eot');
+  src: local('☺'), asset-url("KievitWebPro-BoldIta.woff") format("woff"), url("fonts/KievitOT-BoldItalic.otf") format("opentype");
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Brighter Planet';
-  src: asset-url('KievitWebPro-Ita.eot', font);
-  src: local('☺'), asset-url("KievitWebPro-Ita.woff", font) format("woff"), asset-url("KievitOT-Italic.otf", font) format("opentype");
+  src: asset-url('KievitWebPro-Ita.eot');
+  src: local('☺'), asset-url("KievitWebPro-Ita.woff") format("woff"), url("fonts/KievitOT-Italic.otf") format("opentype");
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'DejaVu Mono';
-  src: asset-url('DejaVuSansMono.eot', font);
-  src: local('☺'), asset-url("DejaVuSansMono.ttf", font) format("opentype");
+  src: asset-url('DejaVuSansMono.eot');
+  src: local('☺'), asset-url("DejaVuSansMono.ttf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
