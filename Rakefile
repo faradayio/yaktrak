@@ -7,7 +7,7 @@ require 'rake'
 Yaktrak::Application.load_tasks
 
 
-require 'earth'
-require 'earth/tasks'
-require 'earth/locality/zip_code'
-Earth::Tasks.new
+#require 'earth'
+#require 'earth/tasks'
+#require 'earth/locality/zip_code'
+#Earth::Tasks.new
