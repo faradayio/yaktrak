@@ -25,6 +25,7 @@ gem 'jquery-rails'
 
 group :production do
   gem 'dalli'
+  gem 'pg'
 end
 
 group :development do

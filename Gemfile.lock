@@ -192,6 +192,7 @@ GEM
       jwt (~> 0.1.4)
       multi_json (~> 1.0)
       rack (~> 1.2)
+    pg (0.14.0)
     polyglot (0.3.3)
     posix-spawn (0.3.6)
     rack (1.4.1)
@@ -333,6 +334,7 @@ DEPENDENCIES
   lock_method
   mongo
   nori (= 0.2.3)
+  pg
   rails (= 3.2.8)
   rspec
   rspec-rails
