@@ -8,12 +8,12 @@ gem 'cache'
 gem 'cache_method'
 gem 'carbon'
 gem 'earth'
-gem 'fozzie'
 gem 'httpclient', '~>2.1' #for savon
 gem 'lock_method'
 gem 'mongo'
 gem 'nori', '0.2.3'
 gem 'savon', '0.9.2'
+gem 'statsd-ruby', :require => 'statsd'
 gem 'tronprint'
 gem 'unicorn'
 
